@@ -5,9 +5,9 @@
 
 - 🌱 I’m currently learning **React**
 
-- 👨‍💻 All of my projects are available at [https://Basantrajshakti.github.io/portfolio/](https://Basantrajshakti.github.io/portfolio/)
+- 👨‍💻 All of my projects are available at : [https://Basantrajshakti.github.io/portfolio/](https://Basantrajshakti.github.io/portfolio/)
 
-- 📝 Personal links [https://linktr.ee/BasantrajShakti](https://linktr.ee/BasantrajShakti)
+- 📝 Personal link : [https://linktr.ee/BasantrajShakti](https://linktr.ee/BasantrajShakti)
 
 - 💬 Ask me about **HTML, CSS, JS, React**
 
