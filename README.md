@@ -1,4 +1,3 @@
-![MasterHead](https://github.com/Basantrajshakti/Basantrajshakti/blob/main/banner.jpeg)
 
 ## 💫 About Me:
 Transformed ideas into reality with 10+ high-performance React apps, and worked with 3+ SaaS projects, with a focus on user experience, performance, and innovation.
@@ -15,5 +14,8 @@ Transformed ideas into reality with 10+ high-performance React apps, and worked 
 ![](https://github-readme-stats.vercel.app/api?username=Basantrajshakti&theme=default&hide_border=false&include_all_commits=true&count_private=true)<br/>
 ![](https://nirzak-streak-stats.vercel.app/?user=Basantrajshakti&theme=default&hide_border=false)<br/>
 ![](https://github-readme-stats.vercel.app/api/top-langs/?username=Basantrajshakti&theme=default&hide_border=false&include_all_commits=true&count_private=true&layout=compact)
+
+![MasterHead](https://hacked-github-stat-trophies.vercel.app/?username=basantrajshakti&column=6)
+
 
 <!-- <img align="right" alt="Coding" width="400" src="https://cdn.dribbble.com/users/1162077/screenshots/3848914/programmer.gif"> -->
