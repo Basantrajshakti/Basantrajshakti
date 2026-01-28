@@ -12,7 +12,7 @@ Transformed ideas into reality with 10+ high-performance React apps, and worked 
 
 ## 📊 GitHub Stats:
 ![](https://github-readme-stats.vercel.app/api/top-langs/?username=Basantrajshakti&theme=default&hide_border=false&include_all_commits=true&count_private=true&layout=compact)<br/>
-![](https://github-readme-stats.vercel.app/api?username=Basantrajshakti&theme=default&hide_border=false&include_all_commits=true&count_private=true)<br/>
+<!-- ![](https://github-readme-stats.vercel.app/api?username=Basantrajshakti&theme=default&hide_border=false&include_all_commits=true&count_private=true)<br/> -->
 ![](https://nirzak-streak-stats.vercel.app/?user=Basantrajshakti&theme=default&hide_border=false)<br/>
 
 ![MasterHead](https://hacked-github-stat-trophies.vercel.app/?username=basantrajshakti&column=6)
