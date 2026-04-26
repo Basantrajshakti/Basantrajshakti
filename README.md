@@ -1,6 +1,6 @@
 
 ## 💫 About Me:
-Transformed ideas into reality with 10+ high-performance React apps, and worked with 3+ SaaS projects, with a focus on user experience, performance, and innovation.
+Founding Engineer with 4+ years of experience building and modernizing large-scale frontend applications, delivering highperformance, user-focused, and AI-enabled features with measurable business impact.
 
 
 ## 🌐 Socials:
