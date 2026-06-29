@@ -50,59 +50,25 @@
         height: 120vh;
       }
 
-      .glow-bg {
-        position: fixed;
-        width: 100vw;
-        height: 100vh;
-        top: 0;
-        left: 0;
-        z-index: -3;
-        pointer-events: none;
-        background: #050510;
-        overflow: hidden;
+      /* Section Specific Background Gradients */
+      .hero {
+        background: radial-gradient(circle at 50% 30%, rgba(255, 255, 255, 0.03) 0%, rgba(8, 60, 211, 0.15) 30%, rgba(56, 189, 248, 0.04) 60%, #050510 85%);
       }
 
-      .glow-bg::before,
-      .glow-bg::after {
-        content: "";
-        position: absolute;
-        width: 800px;
-        height: 800px;
-        border-radius: 50%;
-        background: radial-gradient(circle, rgba(8, 60, 211, 0.16) 0%, transparent 70%);
-        filter: blur(90px);
-        pointer-events: none;
+      .experience-section {
+        background: radial-gradient(circle at 10% 40%, rgba(8, 60, 211, 0.16) 0%, rgba(96, 165, 250, 0.03) 40%, #050510 80%);
       }
 
-      .glow-bg::before {
-        top: -20%;
-        left: 10%;
-        animation: float-glow-1 25s infinite alternate ease-in-out;
+      .skills-section {
+        background: radial-gradient(circle at 50% 50%, rgba(56, 189, 248, 0.1) 0%, rgba(8, 60, 211, 0.04) 50%, #050510 85%);
       }
 
-      .glow-bg::after {
-        bottom: -20%;
-        right: 10%;
-        background: radial-gradient(circle, rgba(96, 165, 250, 0.12) 0%, transparent 70%);
-        animation: float-glow-2 30s infinite alternate ease-in-out;
+      .education-section {
+        background: radial-gradient(circle at 90% 40%, rgba(96, 165, 250, 0.14) 0%, rgba(8, 60, 211, 0.03) 45%, #050510 80%);
       }
 
-      @keyframes float-glow-1 {
-        0% {
-          transform: translate(0, 0) scale(1);
-        }
-        100% {
-          transform: translate(200px, 150px) scale(1.2);
-        }
-      }
-
-      @keyframes float-glow-2 {
-        0% {
-          transform: translate(0, 0) scale(1.1);
-        }
-        100% {
-          transform: translate(-250px, -200px) scale(0.85);
-        }
+      .projects-section {
+        background: radial-gradient(circle at 20% 50%, rgba(8, 60, 211, 0.15) 0%, rgba(56, 189, 248, 0.03) 40%, #050510 80%);
       }
 
       .container {
@@ -692,12 +658,12 @@
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
-        width: 600px;
-        height: 600px;
-        background: radial-gradient(circle, rgba(8, 60, 211, 0.08) 0%, transparent 70%);
+        width: 700px;
+        height: 700px;
+        background: radial-gradient(circle, rgba(56, 189, 248, 0.08) 0%, rgba(8, 60, 211, 0.04) 50%, transparent 75%);
         z-index: -1;
         pointer-events: none;
-        filter: blur(50px);
+        filter: blur(100px);
       }
 
       .skills-grid {
@@ -941,7 +907,6 @@
 
   <body>
     <div class="grid-bg"></div>
-    <div class="glow-bg"></div>
 
     <header>
       <div class="container">
@@ -1093,7 +1058,7 @@
       </div>
     </section>
 
-    <section class="container">
+    <section class="experience-section container">
       <div class="section-header">
         <h2>Experience</h2>
       </div>
@@ -1157,8 +1122,7 @@
       </div>
     </section>
 
-    <section class="container skills-section">
-      <div class="skills-glow"></div>
+    <section class="skills-section container">
       <div class="section-header">
         <h2>Skills</h2>
       </div>
@@ -1299,7 +1263,7 @@
       </div>
     </section>
 
-    <section class="container">
+    <section class="education-section container">
       <div class="section-header">
         <h2>Education</h2>
       </div>
@@ -1328,7 +1292,7 @@
       </div>
     </section>
 
-    <section class="container">
+    <section class="projects-section container">
       <div class="section-header">
         <h2>Key Projects</h2>
       </div>
