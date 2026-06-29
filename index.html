@@ -744,6 +744,26 @@
         margin-top: 40px;
       }
 
+      /* Certificates Grid */
+      .certificates-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 32px;
+        margin-top: 40px;
+      }
+
+      @media (max-width: 1024px) {
+        .certificates-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+
+      @media (max-width: 768px) {
+        .certificates-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+
       .card-item {
         position: relative;
         background: linear-gradient(135deg, rgba(56, 189, 248, 0.08) 0%, rgba(56, 189, 248, 0.02) 100%);
@@ -1325,7 +1345,7 @@
 
         <!-- 4. Inkers Technology -->
         <div class="experience-row">
-          <div class="experience-row-left">September 2021 — December 2021</div>
+          <div class="experience-row-left">October 2021 — December 2021</div>
           <div class="experience-row-right">
             <h3>Inkers Technology</h3>
             <p>Full Stack Intern</p>
@@ -2000,6 +2020,84 @@
               <span>Programmed offscreen caching & backend upload sync.</span>
             </li>
           </ul>
+        </div>
+    </section>
+
+    <section class="certificates-section container">
+      <div class="section-header">
+        <h2>Certifications</h2>
+      </div>
+      <div class="certificates-grid">
+        <!-- Certificate 1 -->
+        <div class="card-item">
+          <div class="card-item-header">
+            <span class="card-item-date">December 2023</span>
+            <h3>Introduction to Front-End Development</h3>
+            <span class="card-item-subtitle">Meta | Coursera</span>
+          </div>
+          <div class="card-item-body">
+            <p>Covered fundamental web technologies, layouts, developer tools, and responsive web build concepts.</p>
+          </div>
+        </div>
+
+        <!-- Certificate 2 -->
+        <div class="card-item">
+          <div class="card-item-header">
+            <span class="card-item-date">January 2024</span>
+            <h3>Programming with JavaScript</h3>
+            <span class="card-item-subtitle">Meta | Coursera</span>
+          </div>
+          <div class="card-item-body">
+            <p>Engineered core JavaScript applications focusing on variables, testing frameworks, and OOP paradigms.</p>
+          </div>
+        </div>
+
+        <!-- Certificate 3 -->
+        <div class="card-item">
+          <div class="card-item-header">
+            <span class="card-item-date">January 2024</span>
+            <h3>Version Control</h3>
+            <span class="card-item-subtitle">Meta | Coursera</span>
+          </div>
+          <div class="card-item-body">
+            <p>Mastered collaborative workflows, branching, and repository structures using Git and GitHub.</p>
+          </div>
+        </div>
+
+        <!-- Certificate 4 -->
+        <div class="card-item">
+          <div class="card-item-header">
+            <span class="card-item-date">January 2024</span>
+            <h3>HTML and CSS in depth</h3>
+            <span class="card-item-subtitle">Meta | Coursera</span>
+          </div>
+          <div class="card-item-body">
+            <p>Designed multi-page architectures using advanced styling grids, layouts, and SVG animation mechanics.</p>
+          </div>
+        </div>
+
+        <!-- Certificate 5 -->
+        <div class="card-item">
+          <div class="card-item-header">
+            <span class="card-item-date">January 2024</span>
+            <h3>React Basics</h3>
+            <span class="card-item-subtitle">Meta | Coursera</span>
+          </div>
+          <div class="card-item-body">
+            <p>Built modular, component-driven single-page interfaces utilizing props, state hooks, and virtual DOM.</p>
+          </div>
+        </div>
+
+        <!-- Certificate 6 -->
+        <div class="card-item">
+          <div class="card-item-header">
+            <span class="card-item-date">January 2024</span>
+            <h3>Advanced React</h3>
+            <span class="card-item-subtitle">Meta | Coursera</span>
+          </div>
+          <div class="card-item-body">
+            <p>Programmed complex web states, custom hooks, context modules, and asynchronous API render pipelines.</p>
+          </div>
         </div>
       </div>
     </section>
