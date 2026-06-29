@@ -646,8 +646,97 @@
         font-weight: 500;
       }
 
-      /* Experience & Education Cards */
-      .experience-grid,
+      /* Experience Grid & Rows (Screenshot style) */
+      .experience-list {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        margin-top: 40px;
+        max-width: 900px;
+        margin-inline: auto;
+      }
+
+      .experience-row {
+        position: relative;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background: linear-gradient(180deg, rgba(20, 20, 35, 0.6) 0%, rgba(12, 12, 22, 0.8) 100%);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        border-radius: 20px;
+        padding: 24px 32px;
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+        overflow: hidden;
+        box-shadow:
+          0 20px 40px -10px rgba(0, 0, 0, 0.5),
+          inset 0 1px 0 rgba(255, 255, 255, 0.06);
+      }
+
+      .experience-row::before {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 60px;
+        background: linear-gradient(to top, rgba(8, 60, 211, 0.15) 0%, transparent 100%);
+        pointer-events: none;
+        z-index: 1;
+      }
+
+      .experience-row::after {
+        content: "";
+        position: absolute;
+        top: -40px;
+        right: -40px;
+        width: 100px;
+        height: 100px;
+        background: radial-gradient(circle, rgba(56, 189, 248, 0.08) 0%, transparent 70%);
+        pointer-events: none;
+        z-index: 1;
+      }
+
+      .experience-row-left {
+        font-size: 0.95rem;
+        color: var(--text-muted);
+        font-weight: 500;
+        position: relative;
+        z-index: 2;
+      }
+
+      .experience-row-right {
+        text-align: right;
+        position: relative;
+        z-index: 2;
+      }
+
+      .experience-row-right h3 {
+        font-size: 1.2rem;
+        font-weight: 700;
+        color: var(--text-light);
+        margin: 0 0 4px 0;
+      }
+
+      .experience-row-right p {
+        font-size: 0.85rem;
+        color: var(--text-muted);
+        margin: 0;
+      }
+
+      @media (max-width: 640px) {
+        .experience-row {
+          flex-direction: column;
+          align-items: flex-start;
+          gap: 12px;
+          padding: 20px;
+        }
+        .experience-row-right {
+          text-align: left;
+        }
+      }
+
+      /* Education Grid & Card */
       .education-grid {
         display: grid;
         grid-template-columns: 1fr 1fr;
@@ -664,7 +753,7 @@
         display: flex;
         flex-direction: column;
         justify-content: flex-start;
-        min-height: 290px;
+        min-height: 200px;
         box-shadow:
           0 30px 60px rgba(0, 0, 0, 0.3),
           inset 0 1px 0 rgba(255, 255, 255, 0.05);
@@ -1204,63 +1293,42 @@
 
     <section class="experience-section container">
       <div class="section-header">
-        <h2>Experience</h2>
+        <h2>My Experience</h2>
       </div>
-      <div class="experience-grid">
-        <div class="card-item">
-          <div class="card-item-header">
-            <span class="card-item-date">March 2026 - Present</span>
-            <h3>Founding + Forward Deployed Engineer</h3>
-            <span class="card-item-subtitle">AlertMi | Remote</span>
-          </div>
-          <div class="card-item-body">
-            <ul>
-              <li>Leading engineering for workspace email multi-agent AI engine.</li>
-              <li>Developed Dockerized deployment and cross-platform desktop installers.</li>
-            </ul>
+      <div class="experience-list">
+        <!-- 1. AlertMi -->
+        <div class="experience-row">
+          <div class="experience-row-left">March 2026 — Present</div>
+          <div class="experience-row-right">
+            <h3>AlertMi</h3>
+            <p>Founding Engineer</p>
           </div>
         </div>
 
-        <div class="card-item">
-          <div class="card-item-header">
-            <span class="card-item-date">March 2023 - Present</span>
-            <h3>Frontend Engineer</h3>
-            <span class="card-item-subtitle">Lumit / Valco Melton | Remote</span>
-          </div>
-          <div class="card-item-body">
-            <ul>
-              <li>Virtualized rendering of 27M+ records, resolving critical browser performance bottlenecks.</li>
-              <li>Modernized frontend architecture, dropping load time by 90% (31s to 3.4s).</li>
-              <li>Trained and quantized local LLaMA 3.2 models for offline query generation.</li>
-            </ul>
+        <!-- 2. Lumit -->
+        <div class="experience-row">
+          <div class="experience-row-left">March 2023 — Present</div>
+          <div class="experience-row-right">
+            <h3>Lumit / Valco Melton</h3>
+            <p>Senior Software Engineer</p>
           </div>
         </div>
 
-        <div class="card-item">
-          <div class="card-item-header">
-            <span class="card-item-date">May 2022 - Feb 2023</span>
-            <h3>Junior Frontend Developer</h3>
-            <span class="card-item-subtitle">Blacksof | Indore</span>
-          </div>
-          <div class="card-item-body">
-            <ul>
-              <li>Rebuilt blacksof.com with responsive UI, increasing lead conversion by 30%.</li>
-              <li>Engineered 7+ web products with rich interactive layouts.</li>
-            </ul>
+        <!-- 3. Blacksof -->
+        <div class="experience-row">
+          <div class="experience-row-left">May 2022 — February 2023</div>
+          <div class="experience-row-right">
+            <h3>Blacksof</h3>
+            <p>Junior Frontend Developer</p>
           </div>
         </div>
 
-        <div class="card-item">
-          <div class="card-item-header">
-            <span class="card-item-date">September 2021 - December 2021</span>
-            <h3>Full Stack Intern</h3>
-            <span class="card-item-subtitle">Inkers Technology | Bangalore</span>
-          </div>
-          <div class="card-item-body">
-            <ul>
-              <li>Built a Three.js and React building voxelizer for 3D area, volume, and distance metrics.</li>
-              <li>Developed a custom Construction Task Gantt chart library.</li>
-            </ul>
+        <!-- 4. Inkers Technology -->
+        <div class="experience-row">
+          <div class="experience-row-left">September 2021 — December 2021</div>
+          <div class="experience-row-right">
+            <h3>Inkers Technology</h3>
+            <p>Full Stack Intern</p>
           </div>
         </div>
       </div>
@@ -1905,12 +1973,12 @@
           </ul>
         </div>
 
-        <!-- 17. Flutter Onboarding App -->
+        <!-- 17. Employee Onboarding App -->
         <div class="project-card">
           <div class="project-card-badge">Mobile App</div>
           <div class="project-card-header">
             <span class="project-company">Inkers Technology</span>
-            <h3>Flutter Onboarding</h3>
+            <h3>Employee Onboarding</h3>
             <p>Mobile sync client uploading scanned metadata.</p>
           </div>
           <div class="project-card-divider"></div>
