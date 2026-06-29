@@ -513,10 +513,28 @@
         z-index: 1;
       }
 
+      .project-card-badge {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        background: rgba(255, 255, 255, 0.03);
+        border: 1px solid rgba(255, 255, 255, 0.06);
+        padding: 4px 10px;
+        border-radius: 99px;
+        font-size: 0.65rem;
+        font-weight: 600;
+        color: var(--text-muted);
+        letter-spacing: 0.5px;
+        z-index: 10;
+        text-transform: uppercase;
+        pointer-events: none;
+      }
+
       .project-card-header {
         position: relative;
         z-index: 2;
         margin-bottom: 12px;
+        padding-right: 70px;
       }
 
       .project-card-header .project-company {
@@ -1425,6 +1443,7 @@
       <div class="projects-grid">
         <!-- 1. AlertMi AI-Agent -->
         <div class="project-card">
+          <div class="project-card-badge">AI / Agent / SaaS</div>
           <div class="project-card-header">
             <span class="project-company">AlertMi</span>
             <h3>AlertMi AI-Agent</h3>
@@ -1453,6 +1472,7 @@
 
         <!-- 2. Prod Inspekt -->
         <div class="project-card">
+          <div class="project-card-badge">SaaS</div>
           <div class="project-card-header">
             <span class="project-company">Lumit / Valco Melton</span>
             <h3>Prod Inspekt</h3>
@@ -1481,6 +1501,7 @@
 
         <!-- 3. Coat & Weight Inspekt -->
         <div class="project-card">
+          <div class="project-card-badge">SaaS</div>
           <div class="project-card-header">
             <span class="project-company">Lumit</span>
             <h3>Coat & Weight Inspekt</h3>
@@ -1509,6 +1530,7 @@
 
         <!-- 4. AI 3D Vision -->
         <div class="project-card">
+          <div class="project-card-badge">AI / SaaS</div>
           <div class="project-card-header">
             <span class="project-company">Lumit</span>
             <h3>AI 3D Vision</h3>
@@ -1537,6 +1559,7 @@
 
         <!-- 5. WeUnit -->
         <div class="project-card">
+          <div class="project-card-badge">SaaS</div>
           <div class="project-card-header">
             <span class="project-company">7Unit Softwares</span>
             <h3>WeUnit</h3>
@@ -1565,6 +1588,7 @@
 
         <!-- 6. Blacksof Web Platform -->
         <div class="project-card">
+          <div class="project-card-badge">Astro / SSR</div>
           <div class="project-card-header">
             <span class="project-company">Blacksof</span>
             <h3>Blacksof Website</h3>
@@ -1593,6 +1617,7 @@
 
         <!-- 7. Innvolution Healthcare -->
         <div class="project-card">
+          <div class="project-card-badge">3D / Web App</div>
           <div class="project-card-header">
             <span class="project-company">Blacksof Portfolio</span>
             <h3>Innvolution Portal</h3>
@@ -1621,6 +1646,7 @@
 
         <!-- 8. CPO Assist -->
         <div class="project-card">
+          <div class="project-card-badge">Web App / Maps</div>
           <div class="project-card-header">
             <span class="project-company">Blacksof Portfolio</span>
             <h3>CPO Assist</h3>
@@ -1649,6 +1675,7 @@
 
         <!-- 9. 3D Model Voxelizer -->
         <div class="project-card">
+          <div class="project-card-badge">3D / Tool</div>
           <div class="project-card-header">
             <span class="project-company">Inkers Technology</span>
             <h3>3D Model Voxelizer</h3>
@@ -1677,6 +1704,7 @@
 
         <!-- 10. Gantt Chart Library -->
         <div class="project-card">
+          <div class="project-card-badge">Library</div>
           <div class="project-card-header">
             <span class="project-company">Inkers Technology</span>
             <h3>Gantt Chart Library</h3>
@@ -1705,6 +1733,7 @@
 
         <!-- 11. Innogent Portal -->
         <div class="project-card">
+          <div class="project-card-badge">Web App</div>
           <div class="project-card-header">
             <span class="project-company">Blacksof Portfolio</span>
             <h3>Innogent Portal</h3>
@@ -1733,6 +1762,7 @@
 
         <!-- 12. Supreme Group -->
         <div class="project-card">
+          <div class="project-card-badge">Web App</div>
           <div class="project-card-header">
             <span class="project-company">Blacksof Portfolio</span>
             <h3>Supreme Group Portal</h3>
@@ -1761,6 +1791,7 @@
 
         <!-- 13. Xero EV -->
         <div class="project-card">
+          <div class="project-card-badge">Catalog</div>
           <div class="project-card-header">
             <span class="project-company">Blacksof Portfolio</span>
             <h3>Xero EV</h3>
@@ -1789,6 +1820,7 @@
 
         <!-- 14. BharatRohan -->
         <div class="project-card">
+          <div class="project-card-badge">Agri-tech</div>
           <div class="project-card-header">
             <span class="project-company">Blacksof Portfolio</span>
             <h3>BharatRohan</h3>
@@ -1817,6 +1849,7 @@
 
         <!-- 15. EF Polymer -->
         <div class="project-card">
+          <div class="project-card-badge">Web App</div>
           <div class="project-card-header">
             <span class="project-company">Blacksof Portfolio</span>
             <h3>EF Polymer</h3>
@@ -1845,6 +1878,7 @@
 
         <!-- 16. AAK India -->
         <div class="project-card">
+          <div class="project-card-badge">Database / SSR</div>
           <div class="project-card-header">
             <span class="project-company">Blacksof Portfolio</span>
             <h3>AAK India</h3>
@@ -1873,6 +1907,7 @@
 
         <!-- 17. Flutter Onboarding App -->
         <div class="project-card">
+          <div class="project-card-badge">Mobile App</div>
           <div class="project-card-header">
             <span class="project-company">Inkers Technology</span>
             <h3>Flutter Onboarding</h3>
