@@ -1,5 +1,4 @@
-<!doctype html>
-<html lang="en">
+<html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -25,6 +24,8 @@
       }
 
       body {
+        max-height: 700px;
+        overflow-y: auto;
         font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
         background-color: var(--bg-base);
         color: var(--text-light);
@@ -33,7 +34,6 @@
         position: relative;
       }
 
-      /* SaaS Background Effects */
       .grid-bg {
         position: absolute;
         top: 0;
@@ -50,7 +50,6 @@
         height: 120vh;
       }
 
-      /* Section Specific Background Gradients */
       .hero {
         background: radial-gradient(circle at 50% 30%, rgba(255, 255, 255, 0.03) 0%, rgba(8, 60, 211, 0.15) 30%, rgba(56, 189, 248, 0.04) 60%, #050510 85%);
       }
@@ -78,7 +77,6 @@
         padding-bottom: 3rem;
       }
 
-      /* Typography */
       h1,
       h2,
       h3,
@@ -104,7 +102,6 @@
         line-height: 1.7;
       }
 
-      /* Header (SaaS Style) */
       header {
         padding: 24px 0;
         position: absolute;
@@ -130,8 +127,7 @@
         gap: 10px;
         font-size: 1.1rem;
         font-weight: 500;
-        /* color: var(--text-light); */
-         color: #d4d4d8;
+        color: #d4d4d8;
         letter-spacing: -0.5px;
       }
 
@@ -153,7 +149,6 @@
         display: none;
       }
 
-      /* Hero Section */
       .hero {
         display: flex;
         align-items: center;
@@ -209,7 +204,6 @@
         font-weight: 400;
       }
 
-      /* Pills inside description */
       .pill {
         display: inline-block;
         padding: 0px 8px 2px 8px;
@@ -245,7 +239,6 @@
         color: var(--text-muted);
       }
 
-      /* Hero Right Side - Floating Stats Cluster */
       .hero-graphics {
         position: relative;
         width: 580px;
@@ -265,7 +258,6 @@
         animation: float-random 10s ease-in-out infinite alternate;
       }
 
-      /* Stats Positions & Sizes */
       .card-pos-center {
         width: 320px;
         top: 50%;
@@ -449,7 +441,6 @@
         line-height: 1;
       }
 
-      /* Sections Grid */
       section {
         padding: 3rem 0;
         border-top: 1px solid var(--border-color);
@@ -464,7 +455,6 @@
         margin-bottom: 4rem;
       }
 
-      /* Projects Grid & Cards */
       .projects-grid {
         display: grid;
         grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
@@ -489,7 +479,6 @@
         overflow: hidden;
       }
 
-      /* Glow overlays replicating the screenshot layout (blue theme) */
       .project-card::before {
         content: "";
         position: absolute;
@@ -647,7 +636,6 @@
         font-weight: 500;
       }
 
-      /* Experience Grid & Rows (Screenshot style) */
       .experience-list {
         display: flex;
         flex-direction: column;
@@ -737,7 +725,6 @@
         }
       }
 
-      /* Education Grid & Card */
       .education-grid {
         display: grid;
         grid-template-columns: 1fr 1fr;
@@ -745,7 +732,6 @@
         margin-top: 40px;
       }
 
-      /* Certificates Grid */
       .certificates-grid {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
@@ -786,7 +772,6 @@
           border-color 0.3s ease;
       }
 
-      /* Diagonal curved wave divider with layered concentric circles */
       .card-item::before {
         content: "";
         position: absolute;
@@ -802,7 +787,6 @@
         box-shadow: -10px 10px 30px rgba(0, 0, 0, 0.4);
       }
 
-      /* Premium glassy outer border */
       .card-item::after {
         content: "";
         position: absolute;
@@ -900,13 +884,10 @@
         align-items: flex-start;
       }
 
-      /* Skills Section */
       .skills-section {
         position: relative;
         overflow: hidden;
       }
-
-
 
       .skills-grid {
         display: flex;
@@ -993,14 +974,13 @@
         color: var(--primary-light);
       }
 
-      /* Projects Details */
       .project-company {
         color: var(--primary-light);
         font-size: 0.85rem;
         font-weight: 600;
         text-transform: uppercase;
         letter-spacing: 1px;
-      }      /* Footer Styles */
+      }
       footer {
         background: rgba(10, 10, 18, 0.9);
         border-top: 1px solid rgba(255, 255, 255, 0.05);
@@ -1051,9 +1031,8 @@
         font-size: 0.8rem;
         color: var(--text-muted);
         margin: 0;
-      } 
+      }
 
-      /* Responsive Design */
       @media (max-width: 1200px) {
         .hero-greeting {
           font-size: 1.8rem;
@@ -1105,26 +1084,8 @@
           left: 0;
         }
       }
-      
 
       @media (max-width: 1200px) {
-        /* .container {
-          padding: 0 16px;
-        }
-
-        header {
-          padding: 12px 0;
-        }
-
-        .hero {
-          padding-top: 180px;
-        }
-
-        .header-content {
-          padding: 8px 12px;
-          border-radius: 50px;
-        } */
-
         .email-text {
           display: none;
         }
@@ -1135,7 +1096,7 @@
 
         .btn-small {
           padding: 10px;
-          border-radius: 50%; 
+          border-radius: 50%;
         }
 
         .hero-greeting {
@@ -1146,7 +1107,6 @@
           font-size: 2.4rem;
         }
 
-        /* Stack cards gracefully on mobile instead of absolute positioning */
         .hero-graphics {
           width: 100%;
           height: auto;
@@ -1176,14 +1136,36 @@
       <div class="container">
         <div class="header-content">
           <div class="logo">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="color: var(--primary)">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2.5"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              style="color: var(--primary)"
+            >
               <polyline points="4 17 10 11 4 5"></polyline>
               <line x1="12" y1="19" x2="20" y2="19"></line>
             </svg>
             <span>www.bshakti.in</span>
           </div>
           <div class="btn-small">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="mail-icon">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="14"
+              height="14"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2.5"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="mail-icon"
+            >
               <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
               <polyline points="22,6 12,13 2,6"></polyline>
             </svg>
@@ -1208,11 +1190,10 @@
       </div>
 
       <div class="hero-graphics">
-        <!-- Central prominent stat -->
         <div class="ui-card card-pos-center">
           <div class="stat-row">
             <div class="stat-icon blue">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
               </svg>
             </div>
@@ -1223,11 +1204,10 @@
           </div>
         </div>
 
-        <!-- Top right stat -->
         <div class="ui-card card-pos-tr">
           <div class="stat-row">
             <div class="stat-icon green">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline>
                 <polyline points="17 6 23 6 23 12"></polyline>
               </svg>
@@ -1239,11 +1219,10 @@
           </div>
         </div>
 
-        <!-- Bottom left stat -->
         <div class="ui-card card-pos-bl">
           <div class="stat-row">
             <div class="stat-icon orange">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <ellipse cx="12" cy="5" rx="9" ry="3"></ellipse>
                 <path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"></path>
                 <path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"></path>
@@ -1256,11 +1235,10 @@
           </div>
         </div>
 
-        <!-- Bottom right stat -->
         <div class="ui-card card-pos-br">
           <div class="stat-row">
             <div class="stat-icon purple">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path>
                 <polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline>
                 <line x1="12" y1="22.08" x2="12" y2="12"></line>
@@ -1273,11 +1251,10 @@
           </div>
         </div>
 
-        <!-- Top left stat -->
         <div class="ui-card card-pos-tl">
           <div class="stat-row">
             <div class="stat-icon teal">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
                 <polyline points="22 4 12 14.01 9 11.01"></polyline>
               </svg>
@@ -1289,11 +1266,10 @@
           </div>
         </div>
 
-        <!-- Top Center stat -->
         <div class="ui-card card-pos-tc">
           <div class="stat-row">
             <div class="stat-icon pink">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
                 <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
               </svg>
@@ -1305,11 +1281,10 @@
           </div>
         </div>
 
-        <!-- Bottom Center stat -->
         <div class="ui-card card-pos-bc">
           <div class="stat-row">
             <div class="stat-icon yellow">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
               </svg>
             </div>
@@ -1327,7 +1302,6 @@
         <h2>My Experience</h2>
       </div>
       <div class="experience-list">
-        <!-- 1. AlertMi -->
         <div class="experience-row">
           <div class="experience-row-left">March 2026 — Present</div>
           <div class="experience-row-right">
@@ -1336,7 +1310,6 @@
           </div>
         </div>
 
-        <!-- 2. Lumit -->
         <div class="experience-row">
           <div class="experience-row-left">March 2023 — Present</div>
           <div class="experience-row-right">
@@ -1345,7 +1318,6 @@
           </div>
         </div>
 
-        <!-- 3. Blacksof -->
         <div class="experience-row">
           <div class="experience-row-left">May 2022 — February 2023</div>
           <div class="experience-row-right">
@@ -1354,7 +1326,6 @@
           </div>
         </div>
 
-        <!-- 4. Inkers Technology -->
         <div class="experience-row">
           <div class="experience-row-left">October 2021 — December 2021</div>
           <div class="experience-row-right">
@@ -1426,7 +1397,7 @@
           <span>TypeScript</span>
         </div>
         <div class="skill-card">
-          <svg width="256" height="256" viewBox="0 0 256 256" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <svg xmlns="http://www.w3.org/2000/svg" width="256" height="256" viewBox="0 0 256 256" fill="none">
             <rect width="256" height="256" rx="60" fill="#F0DB4F" />
             <path
               d="M67.3117 213.932L86.9027 202.076C90.6821 208.777 94.1202 214.447 102.367 214.447C110.272 214.447 115.256 211.355 115.256 199.327V117.529H139.314V199.667C139.314 224.584 124.708 235.926 103.398 235.926C84.1533 235.926 72.9819 225.959 67.3113 213.93"
@@ -1540,7 +1511,6 @@
         <h2>Projects</h2>
       </div>
       <div class="projects-grid">
-        <!-- 1. AlertMi AI-Agent -->
         <div class="project-card">
           <div class="project-card-badge">AI / Agent / SaaS</div>
           <div class="project-card-header">
@@ -1552,7 +1522,7 @@
           <ul class="project-card-list">
             <li>
               <div class="check-badge">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="4">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="4">
                   <polyline points="20 6 9 17 4 12"></polyline>
                 </svg>
               </div>
@@ -1560,7 +1530,7 @@
             </li>
             <li>
               <div class="check-badge">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="4">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="4">
                   <polyline points="20 6 9 17 4 12"></polyline>
                 </svg>
               </div>
@@ -1569,7 +1539,6 @@
           </ul>
         </div>
 
-        <!-- 2. Prod Inspekt -->
         <div class="project-card">
           <div class="project-card-badge">SaaS</div>
           <div class="project-card-header">
@@ -1581,7 +1550,7 @@
           <ul class="project-card-list">
             <li>
               <div class="check-badge">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="4">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="4">
                   <polyline points="20 6 9 17 4 12"></polyline>
                 </svg>
               </div>
@@ -1589,7 +1558,7 @@
             </li>
             <li>
               <div class="check-badge">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="4">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="4">
                   <polyline points="20 6 9 17 4 12"></polyline>
                 </svg>
               </div>
@@ -1598,19 +1567,18 @@
           </ul>
         </div>
 
-        <!-- 3. Coat & Weight Inspekt -->
         <div class="project-card">
           <div class="project-card-badge">SaaS</div>
           <div class="project-card-header">
             <span class="project-company">Lumit</span>
-            <h3>Coat & Weight Inspekt</h3>
+            <h3>Coat and Weight Inspekt</h3>
             <p>High-resolution industrial defect annotation platform.</p>
           </div>
           <div class="project-card-divider"></div>
           <ul class="project-card-list">
             <li>
               <div class="check-badge">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="4">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="4">
                   <polyline points="20 6 9 17 4 12"></polyline>
                 </svg>
               </div>
@@ -1618,7 +1586,7 @@
             </li>
             <li>
               <div class="check-badge">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="4">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="4">
                   <polyline points="20 6 9 17 4 12"></polyline>
                 </svg>
               </div>
@@ -1627,7 +1595,6 @@
           </ul>
         </div>
 
-        <!-- 4. AI 3D Vision -->
         <div class="project-card">
           <div class="project-card-badge">AI / SaaS</div>
           <div class="project-card-header">
@@ -1639,7 +1606,7 @@
           <ul class="project-card-list">
             <li>
               <div class="check-badge">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="4">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="4">
                   <polyline points="20 6 9 17 4 12"></polyline>
                 </svg>
               </div>
@@ -1647,7 +1614,7 @@
             </li>
             <li>
               <div class="check-badge">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="4">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="4">
                   <polyline points="20 6 9 17 4 12"></polyline>
                 </svg>
               </div>
@@ -1656,7 +1623,6 @@
           </ul>
         </div>
 
-        <!-- 5. WeUnit -->
         <div class="project-card">
           <div class="project-card-badge">SaaS</div>
           <div class="project-card-header">
@@ -1668,7 +1634,7 @@
           <ul class="project-card-list">
             <li>
               <div class="check-badge">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="4">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="4">
                   <polyline points="20 6 9 17 4 12"></polyline>
                 </svg>
               </div>
@@ -1676,7 +1642,7 @@
             </li>
             <li>
               <div class="check-badge">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="4">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="4">
                   <polyline points="20 6 9 17 4 12"></polyline>
                 </svg>
               </div>
@@ -1685,7 +1651,6 @@
           </ul>
         </div>
 
-        <!-- 6. Blacksof Web Platform -->
         <div class="project-card">
           <div class="project-card-badge">Astro / SSR</div>
           <div class="project-card-header">
@@ -1697,7 +1662,7 @@
           <ul class="project-card-list">
             <li>
               <div class="check-badge">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="4">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="4">
                   <polyline points="20 6 9 17 4 12"></polyline>
                 </svg>
               </div>
@@ -1705,7 +1670,7 @@
             </li>
             <li>
               <div class="check-badge">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="4">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="4">
                   <polyline points="20 6 9 17 4 12"></polyline>
                 </svg>
               </div>
@@ -1714,7 +1679,6 @@
           </ul>
         </div>
 
-        <!-- 7. Innvolution Healthcare -->
         <div class="project-card">
           <div class="project-card-badge">3D / Web App</div>
           <div class="project-card-header">
@@ -1726,7 +1690,7 @@
           <ul class="project-card-list">
             <li>
               <div class="check-badge">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="4">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="4">
                   <polyline points="20 6 9 17 4 12"></polyline>
                 </svg>
               </div>
@@ -1734,7 +1698,7 @@
             </li>
             <li>
               <div class="check-badge">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="4">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="4">
                   <polyline points="20 6 9 17 4 12"></polyline>
                 </svg>
               </div>
@@ -1743,7 +1707,6 @@
           </ul>
         </div>
 
-        <!-- 8. CPO Assist -->
         <div class="project-card">
           <div class="project-card-badge">Web App / Maps</div>
           <div class="project-card-header">
@@ -1755,7 +1718,7 @@
           <ul class="project-card-list">
             <li>
               <div class="check-badge">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="4">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="4">
                   <polyline points="20 6 9 17 4 12"></polyline>
                 </svg>
               </div>
@@ -1763,7 +1726,7 @@
             </li>
             <li>
               <div class="check-badge">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="4">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="4">
                   <polyline points="20 6 9 17 4 12"></polyline>
                 </svg>
               </div>
@@ -1772,7 +1735,6 @@
           </ul>
         </div>
 
-        <!-- 9. 3D Model Voxelizer -->
         <div class="project-card">
           <div class="project-card-badge">3D / Tool</div>
           <div class="project-card-header">
@@ -1784,7 +1746,7 @@
           <ul class="project-card-list">
             <li>
               <div class="check-badge">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="4">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="4">
                   <polyline points="20 6 9 17 4 12"></polyline>
                 </svg>
               </div>
@@ -1792,7 +1754,7 @@
             </li>
             <li>
               <div class="check-badge">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="4">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="4">
                   <polyline points="20 6 9 17 4 12"></polyline>
                 </svg>
               </div>
@@ -1801,7 +1763,6 @@
           </ul>
         </div>
 
-        <!-- 10. Gantt Chart Library -->
         <div class="project-card">
           <div class="project-card-badge">Library</div>
           <div class="project-card-header">
@@ -1813,7 +1774,7 @@
           <ul class="project-card-list">
             <li>
               <div class="check-badge">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="4">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="4">
                   <polyline points="20 6 9 17 4 12"></polyline>
                 </svg>
               </div>
@@ -1821,7 +1782,7 @@
             </li>
             <li>
               <div class="check-badge">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="4">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="4">
                   <polyline points="20 6 9 17 4 12"></polyline>
                 </svg>
               </div>
@@ -1830,7 +1791,6 @@
           </ul>
         </div>
 
-        <!-- 11. Innogent Portal -->
         <div class="project-card">
           <div class="project-card-badge">Web App</div>
           <div class="project-card-header">
@@ -1842,7 +1802,7 @@
           <ul class="project-card-list">
             <li>
               <div class="check-badge">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="4">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="4">
                   <polyline points="20 6 9 17 4 12"></polyline>
                 </svg>
               </div>
@@ -1850,7 +1810,7 @@
             </li>
             <li>
               <div class="check-badge">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="4">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="4">
                   <polyline points="20 6 9 17 4 12"></polyline>
                 </svg>
               </div>
@@ -1859,7 +1819,6 @@
           </ul>
         </div>
 
-        <!-- 12. Supreme Group -->
         <div class="project-card">
           <div class="project-card-badge">Web App</div>
           <div class="project-card-header">
@@ -1871,7 +1830,7 @@
           <ul class="project-card-list">
             <li>
               <div class="check-badge">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="4">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="4">
                   <polyline points="20 6 9 17 4 12"></polyline>
                 </svg>
               </div>
@@ -1879,7 +1838,7 @@
             </li>
             <li>
               <div class="check-badge">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="4">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="4">
                   <polyline points="20 6 9 17 4 12"></polyline>
                 </svg>
               </div>
@@ -1888,7 +1847,6 @@
           </ul>
         </div>
 
-        <!-- 13. Xero EV -->
         <div class="project-card">
           <div class="project-card-badge">Catalog</div>
           <div class="project-card-header">
@@ -1900,7 +1858,7 @@
           <ul class="project-card-list">
             <li>
               <div class="check-badge">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="4">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="4">
                   <polyline points="20 6 9 17 4 12"></polyline>
                 </svg>
               </div>
@@ -1908,7 +1866,7 @@
             </li>
             <li>
               <div class="check-badge">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="4">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="4">
                   <polyline points="20 6 9 17 4 12"></polyline>
                 </svg>
               </div>
@@ -1917,7 +1875,6 @@
           </ul>
         </div>
 
-        <!-- 14. BharatRohan -->
         <div class="project-card">
           <div class="project-card-badge">Agri-tech</div>
           <div class="project-card-header">
@@ -1929,7 +1886,7 @@
           <ul class="project-card-list">
             <li>
               <div class="check-badge">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="4">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="4">
                   <polyline points="20 6 9 17 4 12"></polyline>
                 </svg>
               </div>
@@ -1937,7 +1894,7 @@
             </li>
             <li>
               <div class="check-badge">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="4">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="4">
                   <polyline points="20 6 9 17 4 12"></polyline>
                 </svg>
               </div>
@@ -1946,7 +1903,6 @@
           </ul>
         </div>
 
-        <!-- 15. EF Polymer -->
         <div class="project-card">
           <div class="project-card-badge">Web App</div>
           <div class="project-card-header">
@@ -1958,7 +1914,7 @@
           <ul class="project-card-list">
             <li>
               <div class="check-badge">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="4">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="4">
                   <polyline points="20 6 9 17 4 12"></polyline>
                 </svg>
               </div>
@@ -1966,7 +1922,7 @@
             </li>
             <li>
               <div class="check-badge">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="4">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="4">
                   <polyline points="20 6 9 17 4 12"></polyline>
                 </svg>
               </div>
@@ -1975,7 +1931,6 @@
           </ul>
         </div>
 
-        <!-- 16. AAK India -->
         <div class="project-card">
           <div class="project-card-badge">Database / SSR</div>
           <div class="project-card-header">
@@ -1987,7 +1942,7 @@
           <ul class="project-card-list">
             <li>
               <div class="check-badge">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="4">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="4">
                   <polyline points="20 6 9 17 4 12"></polyline>
                 </svg>
               </div>
@@ -1995,7 +1950,7 @@
             </li>
             <li>
               <div class="check-badge">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="4">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="4">
                   <polyline points="20 6 9 17 4 12"></polyline>
                 </svg>
               </div>
@@ -2004,7 +1959,6 @@
           </ul>
         </div>
 
-        <!-- 17. Employee Onboarding App -->
         <div class="project-card">
           <div class="project-card-badge">Mobile App</div>
           <div class="project-card-header">
@@ -2016,22 +1970,23 @@
           <ul class="project-card-list">
             <li>
               <div class="check-badge">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="4">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="4">
                   <polyline points="20 6 9 17 4 12"></polyline>
                 </svg>
               </div>
-              <span>Integrated camera capture scanners & search grids.</span>
+              <span>Integrated camera capture scanners and search grids.</span>
             </li>
             <li>
               <div class="check-badge">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="4">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="4">
                   <polyline points="20 6 9 17 4 12"></polyline>
                 </svg>
               </div>
-              <span>Programmed offscreen caching & backend upload sync.</span>
+              <span>Programmed offscreen caching and backend upload sync.</span>
             </li>
           </ul>
         </div>
+      </div>
     </section>
 
     <section class="certificates-section container">
@@ -2039,7 +1994,6 @@
         <h2>Certifications</h2>
       </div>
       <div class="certificates-grid">
-        <!-- Certificate 1 -->
         <div class="card-item">
           <div class="card-item-header">
             <span class="card-item-date">December 2023</span>
@@ -2051,7 +2005,6 @@
           </div>
         </div>
 
-        <!-- Certificate 2 -->
         <div class="card-item">
           <div class="card-item-header">
             <span class="card-item-date">January 2024</span>
@@ -2063,7 +2016,6 @@
           </div>
         </div>
 
-        <!-- Certificate 3 -->
         <div class="card-item">
           <div class="card-item-header">
             <span class="card-item-date">January 2024</span>
@@ -2075,7 +2027,6 @@
           </div>
         </div>
 
-        <!-- Certificate 4 -->
         <div class="card-item">
           <div class="card-item-header">
             <span class="card-item-date">January 2024</span>
@@ -2087,7 +2038,6 @@
           </div>
         </div>
 
-        <!-- Certificate 5 -->
         <div class="card-item">
           <div class="card-item-header">
             <span class="card-item-date">January 2024</span>
@@ -2099,7 +2049,6 @@
           </div>
         </div>
 
-        <!-- Certificate 6 -->
         <div class="card-item">
           <div class="card-item-header">
             <span class="card-item-date">January 2024</span>
@@ -2116,9 +2065,8 @@
     <footer>
       <div class="container">
         <div class="footer-contacts">
-          <!-- Website -->
           <div class="footer-contact-item">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
               <circle cx="12" cy="12" r="10"></circle>
               <line x1="2" y1="12" x2="22" y2="12"></line>
               <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
@@ -2126,26 +2074,25 @@
             <span class="contact-value">www.bshakti.in</span>
           </div>
 
-          <!-- Email -->
           <div class="footer-contact-item">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
               <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
               <polyline points="22,6 12,13 2,6"></polyline>
             </svg>
             <span class="contact-value">basantrajshakti@gmail.com</span>
           </div>
 
-          <!-- Phone -->
           <div class="footer-contact-item">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <path
+                d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"
+              ></path>
             </svg>
             <span class="contact-value">+91 73689 53257</span>
           </div>
 
-          <!-- LinkedIn -->
           <div class="footer-contact-item">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
               <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
               <rect x="2" y="9" width="4" height="12"></rect>
               <circle cx="4" cy="4" r="2"></circle>
@@ -2154,7 +2101,7 @@
           </div>
         </div>
         <div class="footer-bottom">
-          <p>&copy; 2026 Basantraj Shakti. All rights reserved.</p>
+          <p>andcopy; 2026 Basantraj Shakti. All rights reserved.</p>
         </div>
       </div>
     </footer>

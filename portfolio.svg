@@ -1,218 +1,2130 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" width="100%" height="100%" fill="none">
-  <defs>
-    <!-- Dark Blue Theme Gradients -->
-    <radialGradient id="glow-cyan" cx="50%" cy="50%" r="50%">
-      <stop offset="0%" stop-color="#00f2fe" stop-opacity="0.25" />
-      <stop offset="100%" stop-color="#00f2fe" stop-opacity="0" />
-    </radialGradient>
-    <radialGradient id="glow-blue" cx="50%" cy="50%" r="50%">
-      <stop offset="0%" stop-color="#1e58ff" stop-opacity="0.3" />
-      <stop offset="100%" stop-color="#0936cc" stop-opacity="0" />
-    </radialGradient>
-    <radialGradient id="glow-darkblue" cx="50%" cy="50%" r="50%">
-      <stop offset="0%" stop-color="#001466" stop-opacity="0.4" />
-      <stop offset="100%" stop-color="#000622" stop-opacity="0" />
-    </radialGradient>
-
-    <!-- Blur Filter -->
-    <filter id="blur-filter" x="-20%" y="-20%" width="140%" height="140%">
-      <feGaussianBlur stdDeviation="70" />
-    </filter>
-  </defs>
-
-  <style>
-    /* Slow ambient mesh animations */
-    @keyframes float-1 {
-      0% { transform: translate(0px, 0px) scale(1); }
-      33% { transform: translate(30px, -30px) scale(1.1); }
-      66% { transform: translate(-20px, 20px) scale(0.9); }
-      100% { transform: translate(0px, 0px) scale(1); }
-    }
-    @keyframes float-2 {
-      0% { transform: translate(0px, 0px) scale(0.95); }
-      50% { transform: translate(-40px, 40px) scale(1.15); }
-      100% { transform: translate(0px, 0px) scale(0.95); }
-    }
-    .blob-1 { animation: float-1 15s infinite ease-in-out; transform-origin: 200px 150px; }
-    .blob-2 { animation: float-2 18s infinite ease-in-out; transform-origin: 600px 250px; }
-    .blob-3 { animation: float-1 20s infinite ease-in-out reverse; transform-origin: 400px 100px; }
-  </style>
-
-  <!-- Deep Dark Background (from theme) -->
-  <rect width="100%" height="100%" fill="#030508" rx="16" />
-
-  <!-- Animated glowing background blobs -->
-  <g filter="url(#blur-filter)">
-    <circle class="blob-1" cx="200" cy="120" r="180" fill="url(#glow-cyan)" />
-    <circle class="blob-2" cx="650" cy="280" r="220" fill="url(#glow-blue)" />
-    <circle class="blob-3" cx="400" cy="200" r="250" fill="url(#glow-darkblue)" />
-  </g>
-
-  <!-- Clean Tech Grid Overlay -->
-  <svg width="100%" height="100%">
-    <defs>
-      <pattern id="grid" width="30" height="30" patternUnits="userSpaceOnUse">
-        <path d="M 30 0 L 0 0 0 30" fill="none" stroke="#4facfe" stroke-width="1" stroke-opacity="0.05" />
-      </pattern>
-    </defs>
-    <rect width="100%" height="100%" fill="url(#grid)" rx="16" />
-  </svg>
-
-  <!-- Responsive HTML Core -->
+<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" fill="none">
   <foreignObject width="100%" height="100%">
-    <div xmlns="http://www.w3.org/1999/xhtml" class="hero-container">
+    <!-- Test code -->
+    <!-- <html xmlns="http://www.w3.org/1999/xhtml">
       <style>
-        .hero-container {
-          width: 100%;
-          height: 100%;
-          box-sizing: border-box;
-          padding: 40px;
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-          justify-content: center;
-          text-align: center;
-          font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-          color: #e2e8f0;
-        }
-
-        /* Top Badge */
-        .badge {
-          display: inline-flex;
-          align-items: center;
-          gap: 8px;
-          background: rgba(0, 242, 254, 0.05);
-          border: 1px solid rgba(0, 242, 254, 0.15);
-          padding: 8px 18px;
-          border-radius: 100px;
-          font-size: 12px;
-          font-weight: 600;
-          letter-spacing: 0.1em;
-          text-transform: uppercase;
-          color: #e2e8f0;
-          margin-bottom: 24px;
-          box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
-        }
-
-        .status-dot {
-          width: 6px;
-          height: 6px;
-          background-color: #00f2fe;
-          border-radius: 50%;
-          box-shadow: 0 0 8px #00f2fe;
-          animation: pulse 2s infinite;
-        }
-
-        /* Clean Developer Typography */
-        .greeting {
-          font-size: 16px;
-          color: #94a3b8;
-          margin-bottom: 8px;
-          font-weight: 500;
-        }
-
-        .name {
-          font-size: 52px;
-          font-weight: 800;
-          margin: 0;
-          letter-spacing: -0.02em;
-          color: #ffffff;
-          line-height: 1.1;
-        }
-
-        /* Cyan/Blue gradient matching the theme's colors */
-        .title-gradient {
-          font-size: 22px;
-          font-weight: 700;
-          margin: 16px 0;
-          background: linear-gradient(90deg, #00f2fe 0%, #4facfe 50%, #1e58ff 100%);
-          -webkit-background-clip: text;
-          -webkit-text-fill-color: transparent;
-          letter-spacing: -0.01em;
-        }
-
-        .tagline {
-          font-size: 14px;
-          line-height: 1.6;
-          color: #94a3b8;
-          max-width: 620px;
-          margin: 0;
-        }
-
-        .logo {
-          position: absolute;
-          top: 30px;
-          left: 40px;
-          font-size: 18px;
-          font-weight: 700;
-          color: #ffffff;
-          letter-spacing: 2px;
-        }
-        .logo-slash {
-          color: #00f2fe;
-        }
-
-        @keyframes pulse {
-          0% { transform: scale(0.9); opacity: 0.5; box-shadow: 0 0 0 0 rgba(0, 242, 254, 0.7); }
-          70% { transform: scale(1); opacity: 1; box-shadow: 0 0 0 6px rgba(0, 242, 254, 0); }
-          100% { transform: scale(0.9); opacity: 0.5; box-shadow: 0 0 0 0 rgba(0, 242, 254, 0); }
-        }
-
-        /* 
-          MOBILE RESPONSIVENESS IN SVG
-          When the SVG is scaled down (e.g., physical width under 600px), 
-          we INCREASE the font sizes relative to the viewBox. 
-          This ensures they remain perfectly readable when the entire image shrinks!
-        */
-        @media (max-width: 600px) {
-          .hero-container {
-            padding: 24px;
-          }
-          .logo {
-            display: none; /* Hide on small screens for cleaner layout */
-          }
-          .badge {
-            font-size: 18px; /* Boosted for mobile legibility */
-            padding: 10px 24px;
-            margin-bottom: 32px;
-          }
-          .status-dot {
-            width: 8px;
-            height: 8px;
-          }
-          .greeting {
-            font-size: 24px;
-          }
-          .name {
-            font-size: 80px; /* Scaled up so it's readable when the image scales down */
-            line-height: 1.1;
-          }
-          .title-gradient {
-            font-size: 32px;
-            margin: 24px 0;
-          }
-          .tagline {
-            font-size: 22px;
-            line-height: 1.5;
-          }
+        .grid-bg {
+          color: red;
         }
       </style>
+      <body>
+        <div class="grid-bg">hello</div>
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="red" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="10"></circle>
+          <line x1="2" y1="12" x2="22" y2="12"></line>
+          <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+        </svg>
+      </body>
+    </html> -->
+    <html xmlns="http://www.w3.org/1999/xhtml">
+      <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Basantraj Shakti | Senior Software Engineer</title>
+        <style>
+          :root {
+            --bg-base: #060611;
+            --bg-card: #0c0c16;
+            --bg-card-elevated: #13131f;
+            --primary: #3b82f6;
+            --primary-light: #60a5fa;
+            --text-light: #ffffff;
+            --text-muted: #a1a1aa;
+            --border-color: rgba(255, 255, 255, 0.08);
+            --border-light: rgba(255, 255, 255, 0.15);
+            --container-max: 1500px;
+          }
 
-      <div class="logo">&lt; BS <span class="logo-slash">/</span>&gt;</div>
+          * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+          }
 
-      <div class="badge">
-        <div class="status-dot"></div>
-        Founding + Senior Software Engineer
-      </div>
-      
-      <div class="greeting">Hi, I'm</div>
-      <h1 class="name">Basantraj Shakti</h1>
-      
-      <div class="title-gradient">AlertMi and Lumit (Valco Melton)</div>
-      
-      <p class="tagline">
-        Building high-performance frontend architectures, custom data visualizations, and robust on-premises multi-agent AI systems.
-      </p>
-    </div>
+          body {
+            max-height: 700px;
+            overflow-y: auto;
+            font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+            background-color: var(--bg-base);
+            color: var(--text-light);
+            line-height: 1.6;
+            overflow-x: hidden;
+            position: relative;
+          }
+
+          .grid-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+            background-size: 40px 40px;
+            background-position: center top;
+            mask-image: radial-gradient(ellipse at 50% 30%, black 0%, transparent 70%);
+            -webkit-mask-image: radial-gradient(ellipse at 50% 30%, black 0%, transparent 70%);
+            z-index: -2;
+            pointer-events: none;
+            height: 120vh;
+          }
+
+          .hero {
+            background: radial-gradient(circle at 50% 30%, rgba(255, 255, 255, 0.03) 0%, rgba(8, 60, 211, 0.15) 30%, rgba(56, 189, 248, 0.04) 60%, #050510 85%);
+          }
+
+          .experience-section {
+            background: radial-gradient(circle at 10% 40%, rgba(8, 60, 211, 0.16) 0%, rgba(96, 165, 250, 0.03) 40%, #050510 80%);
+          }
+
+          .skills-section {
+            background: radial-gradient(circle at 50% 50%, rgba(56, 189, 248, 0.1) 0%, rgba(8, 60, 211, 0.04) 50%, #050510 85%);
+          }
+
+          .education-section {
+            background: radial-gradient(circle at 90% 40%, rgba(96, 165, 250, 0.14) 0%, rgba(8, 60, 211, 0.03) 45%, #050510 80%);
+          }
+
+          .projects-section {
+            background: radial-gradient(circle at 20% 50%, rgba(8, 60, 211, 0.15) 0%, rgba(56, 189, 248, 0.03) 40%, #050510 80%);
+          }
+
+          .container {
+            max-width: var(--container-max);
+            margin: 0 auto;
+            padding-inline: 40px;
+            padding-bottom: 3rem;
+          }
+
+          h1,
+          h2,
+          h3,
+          h4 {
+            font-weight: 700;
+            line-height: 1.1;
+            letter-spacing: -0.02em;
+          }
+
+          h2 {
+            font-size: 2.6rem;
+            margin-bottom: 3rem;
+          }
+
+          h3 {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+          }
+
+          p {
+            color: var(--text-muted);
+            font-size: 1.1rem;
+            line-height: 1.7;
+          }
+
+          header {
+            padding: 24px 0;
+            position: absolute;
+            width: 100%;
+            top: 0;
+            z-index: 100;
+          }
+
+          .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(12, 12, 22, 0.6);
+            border: 1px solid var(--border-color);
+            border-radius: 100px;
+            padding: 12px 24px;
+            backdrop-filter: blur(12px);
+          }
+
+          .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 1.1rem;
+            font-weight: 500;
+            color: #d4d4d8;
+            letter-spacing: -0.5px;
+          }
+
+          .btn-small {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid var(--border-color);
+            color: #d4d4d8;
+            padding: 8px 20px;
+            border-radius: 50px;
+            font-size: 0.95rem;
+            font-weight: 500;
+            letter-spacing: 0.5px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+          }
+
+          .mail-icon {
+            display: none;
+          }
+
+          .hero {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            min-height: 100vh;
+            padding-top: 80px;
+            gap: 120px;
+          }
+
+          .hero-content {
+            flex: 1;
+            max-width: 650px;
+            animation: slideInUp 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+          }
+
+          @keyframes slideInUp {
+            from {
+              opacity: 0;
+              transform: translateY(30px);
+            }
+
+            to {
+              opacity: 1;
+              transform: translateY(0);
+            }
+          }
+
+          .hero-greeting {
+            font-size: 2.2rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            color: var(--text-light);
+            letter-spacing: -0.02em;
+          }
+
+          .hero-title {
+            font-size: 4.8rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            letter-spacing: -0.04em;
+            line-height: 1.15;
+            padding-bottom: 0.1em;
+            background: linear-gradient(135deg, #ffffff, #083cd3, #0860ea);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+          }
+
+          .hero-desc {
+            font-size: 1.15rem;
+            color: var(--text-muted);
+            margin-bottom: 2.5rem;
+            line-height: 1.8;
+            font-weight: 400;
+          }
+
+          .pill {
+            display: inline-block;
+            padding: 0px 8px 2px 8px;
+            border-radius: 6px;
+            font-weight: 400;
+            font-size: 1.1rem;
+            margin: 0 2px;
+          }
+
+          .pill-blue {
+            background: rgba(37, 99, 235, 0.15);
+            color: #60a5fa;
+            border: 1px solid rgba(37, 99, 235, 0.3);
+          }
+
+          .pill-orange {
+            background: rgba(249, 115, 22, 0.15);
+            color: #fb923c;
+            border: 1px solid rgba(249, 115, 22, 0.3);
+          }
+
+          .pill-green {
+            background: rgba(34, 197, 94, 0.15);
+            color: #4ade80;
+            border: 1px solid rgba(34, 197, 94, 0.3);
+          }
+
+          .hero-subtext {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.9rem;
+            color: var(--text-muted);
+          }
+
+          .hero-graphics {
+            position: relative;
+            width: 580px;
+            height: 500px;
+          }
+
+          .ui-card {
+            position: absolute;
+            background: linear-gradient(145deg, #131320, #0a0a12);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            box-shadow:
+              0 20px 40px rgba(0, 0, 0, 0.5),
+              inset 0 1px 1px rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            padding: 20px;
+            animation: float-random 10s ease-in-out infinite alternate;
+          }
+
+          .card-pos-center {
+            width: 320px;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 10;
+            padding: 28px;
+            background: linear-gradient(145deg, #1a1a2e, #0f0f1c);
+            border: 1px solid rgba(96, 165, 250, 0.2);
+            box-shadow:
+              0 30px 60px rgba(0, 0, 0, 0.6),
+              0 0 40px rgba(37, 99, 235, 0.15),
+              inset 0 1px 1px rgba(255, 255, 255, 0.1);
+            animation: float-center 8s ease-in-out infinite alternate;
+          }
+
+          .card-pos-center h4 {
+            font-size: 1.05rem;
+            color: var(--primary-light);
+          }
+
+          .card-pos-center p {
+            font-size: 2rem;
+            margin-top: 5px;
+          }
+
+          .card-pos-center .stat-icon {
+            width: 56px;
+            height: 56px;
+            border-radius: 16px;
+          }
+
+          .card-pos-center .stat-icon svg {
+            width: 28px;
+            height: 28px;
+          }
+
+          .card-pos-tr {
+            width: 240px;
+            top: 15%;
+            right: -20px;
+            z-index: 4;
+            animation-delay: -2s;
+          }
+
+          .card-pos-tl {
+            width: 210px;
+            top: 25%;
+            left: -10px;
+            z-index: 3;
+            animation-delay: -5s;
+            animation-duration: 12s;
+          }
+
+          .card-pos-bl {
+            width: 250px;
+            bottom: 15%;
+            left: 10px;
+            z-index: 6;
+            animation-delay: -1s;
+            animation-duration: 9s;
+          }
+
+          .card-pos-br {
+            width: 230px;
+            bottom: 25%;
+            right: -10px;
+            z-index: 2;
+            animation-delay: -7s;
+            animation-duration: 14s;
+          }
+
+          .card-pos-tc {
+            width: 200px;
+            top: 5%;
+            left: 25%;
+            z-index: 5;
+            animation-delay: -3s;
+            animation-duration: 11s;
+          }
+
+          .card-pos-bc {
+            width: 220px;
+            bottom: 5%;
+            right: 25%;
+            z-index: 7;
+            animation-delay: -6s;
+            animation-duration: 13s;
+          }
+
+          @keyframes float-center {
+            0% {
+              transform: translate(-50%, -50%);
+            }
+
+            100% {
+              transform: translate(-50%, calc(-50% - 20px));
+            }
+          }
+
+          @keyframes float-random {
+            0% {
+              transform: translateY(0);
+            }
+
+            100% {
+              transform: translateY(-15px);
+            }
+          }
+
+          .stat-row {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+          }
+
+          .stat-icon {
+            width: 44px;
+            height: 44px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid transparent;
+          }
+
+          .stat-icon.blue {
+            background: rgba(37, 99, 235, 0.15);
+            border-color: rgba(37, 99, 235, 0.3);
+            color: #60a5fa;
+          }
+
+          .stat-icon.green {
+            background: rgba(34, 197, 94, 0.15);
+            border-color: rgba(34, 197, 94, 0.3);
+            color: #4ade80;
+          }
+
+          .stat-icon.orange {
+            background: rgba(249, 115, 22, 0.15);
+            border-color: rgba(249, 115, 22, 0.3);
+            color: #fb923c;
+          }
+
+          .stat-icon.purple {
+            background: rgba(168, 85, 247, 0.15);
+            border-color: rgba(168, 85, 247, 0.3);
+            color: #c084fc;
+          }
+
+          .stat-icon.teal {
+            background: rgba(20, 184, 166, 0.15);
+            border-color: rgba(20, 184, 166, 0.3);
+            color: #2dd4bf;
+          }
+
+          .stat-icon.pink {
+            background: rgba(236, 72, 153, 0.15);
+            border-color: rgba(236, 72, 153, 0.3);
+            color: #f472b6;
+          }
+
+          .stat-icon.yellow {
+            background: rgba(234, 179, 8, 0.15);
+            border-color: rgba(234, 179, 8, 0.3);
+            color: #facc15;
+          }
+
+          .stat-info h4 {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin-bottom: 2px;
+            font-weight: 500;
+          }
+
+          .stat-info p {
+            font-size: 1.25rem;
+            color: var(--text-light);
+            font-weight: 700;
+            margin: 0;
+            line-height: 1;
+          }
+
+          section {
+            padding: 3rem 0;
+            border-top: 1px solid var(--border-color);
+          }
+
+          .hero {
+            border-top: none;
+          }
+
+          .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+          }
+
+          .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+            gap: 32px;
+            margin-top: 40px;
+          }
+
+          .project-card {
+            position: relative;
+            background: linear-gradient(180deg, rgba(20, 20, 35, 0.6) 0%, rgba(12, 12, 22, 0.8) 100%);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 28px;
+            padding: 24px 24px;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            box-shadow:
+              0 30px 60px -15px rgba(0, 0, 0, 0.6),
+              inset 0 1px 0 rgba(255, 255, 255, 0.06);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            overflow: hidden;
+          }
+
+          .project-card::before {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 80px;
+            background: linear-gradient(to top, rgba(8, 60, 211, 0.18) 0%, transparent 100%);
+            pointer-events: none;
+            z-index: 1;
+          }
+
+          .project-card::after {
+            content: "";
+            position: absolute;
+            top: -60px;
+            right: -60px;
+            width: 140px;
+            height: 140px;
+            background: radial-gradient(circle, rgba(56, 189, 248, 0.1) 0%, transparent 70%);
+            pointer-events: none;
+            z-index: 1;
+          }
+
+          .project-card-badge {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            padding: 4px 10px;
+            border-radius: 99px;
+            font-size: 0.65rem;
+            font-weight: 600;
+            color: var(--text-muted);
+            letter-spacing: 0.5px;
+            z-index: 10;
+            text-transform: uppercase;
+            pointer-events: none;
+          }
+
+          .project-card-header {
+            position: relative;
+            z-index: 2;
+            margin-bottom: 12px;
+            padding-right: 70px;
+          }
+
+          .project-card-header .project-company {
+            font-size: 0.68rem;
+            color: #60a5fa;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            font-weight: 700;
+            margin-bottom: 4px;
+            display: block;
+          }
+
+          .project-card-header h3 {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--text-light);
+            margin-bottom: 6px;
+            line-height: 1.25;
+          }
+
+          .project-card-header p {
+            font-size: 0.84rem;
+            color: var(--text-muted);
+            line-height: 1.4;
+            margin: 0;
+          }
+
+          .project-card-divider {
+            height: 1px;
+            background: rgba(255, 255, 255, 0.06);
+            margin: 14px 0;
+            position: relative;
+            z-index: 2;
+          }
+
+          .project-card-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            position: relative;
+            z-index: 2;
+          }
+
+          .project-card-list li {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            font-size: 0.9rem;
+            color: var(--text-light);
+            line-height: 1.4;
+          }
+
+          .check-badge {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            background: #083cd3;
+            color: #ffffff;
+            flex-shrink: 0;
+            margin-top: 2px;
+          }
+
+          .check-badge svg {
+            width: 10px;
+            height: 10px;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+          }
+
+          .project-card-action {
+            position: relative;
+            z-index: 2;
+          }
+
+          .btn-project {
+            display: block;
+            width: 100%;
+            text-align: center;
+            padding: 14px;
+            border-radius: 99px;
+            font-size: 0.9rem;
+            font-weight: 700;
+            color: #ffffff;
+            background: linear-gradient(135deg, #083cd3 0%, #38bdf8 100%);
+            box-shadow: 0 8px 24px rgba(8, 60, 211, 0.3);
+            text-decoration: none;
+            transition: box-shadow 0.2s ease;
+          }
+
+          .skill-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+          }
+
+          .skill-tag {
+            background: rgba(255, 255, 255, 0.04);
+            color: var(--text-muted);
+            padding: 6px 14px;
+            border-radius: 8px;
+            font-size: 0.9rem;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            font-weight: 500;
+          }
+
+          .experience-list {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            margin-top: 40px;
+            max-width: 900px;
+            margin-inline: auto;
+          }
+
+          .experience-row {
+            position: relative;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: linear-gradient(180deg, rgba(20, 20, 35, 0.6) 0%, rgba(12, 12, 22, 0.8) 100%);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 20px;
+            padding: 24px 32px;
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            overflow: hidden;
+            box-shadow:
+              0 20px 40px -10px rgba(0, 0, 0, 0.5),
+              inset 0 1px 0 rgba(255, 255, 255, 0.06);
+          }
+
+          .experience-row::before {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 60px;
+            background: linear-gradient(to top, rgba(8, 60, 211, 0.15) 0%, transparent 100%);
+            pointer-events: none;
+            z-index: 1;
+          }
+
+          .experience-row::after {
+            content: "";
+            position: absolute;
+            top: -40px;
+            right: -40px;
+            width: 100px;
+            height: 100px;
+            background: radial-gradient(circle, rgba(56, 189, 248, 0.08) 0%, transparent 70%);
+            pointer-events: none;
+            z-index: 1;
+          }
+
+          .experience-row-left {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            font-weight: 500;
+            position: relative;
+            z-index: 2;
+          }
+
+          .experience-row-right {
+            text-align: right;
+            position: relative;
+            z-index: 2;
+          }
+
+          .experience-row-right h3 {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--text-light);
+            margin: 0 0 4px 0;
+          }
+
+          .experience-row-right p {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin: 0;
+          }
+
+          @media (max-width: 640px) {
+            .experience-row {
+              flex-direction: column;
+              align-items: flex-start;
+              gap: 12px;
+              padding: 20px;
+            }
+            .experience-row-right {
+              text-align: left;
+            }
+          }
+
+          .education-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 32px;
+            margin-top: 40px;
+          }
+
+          .certificates-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 32px;
+            margin-top: 40px;
+          }
+
+          @media (max-width: 1024px) {
+            .certificates-grid {
+              grid-template-columns: repeat(2, 1fr);
+            }
+          }
+
+          @media (max-width: 768px) {
+            .certificates-grid {
+              grid-template-columns: 1fr;
+            }
+          }
+
+          .card-item {
+            position: relative;
+            background: linear-gradient(135deg, rgba(56, 189, 248, 0.08) 0%, rgba(56, 189, 248, 0.02) 100%);
+            border: 1px solid rgba(56, 189, 248, 0.15);
+            border-radius: 36px;
+            padding: 40px 32px 32px 32px;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            min-height: 200px;
+            box-shadow:
+              0 30px 60px rgba(0, 0, 0, 0.3),
+              inset 0 1px 0 rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            overflow: hidden;
+            transition:
+              transform 0.3s ease,
+              border-color 0.3s ease;
+          }
+
+          .card-item::before {
+            content: "";
+            position: absolute;
+            top: -60px;
+            right: -60px;
+            width: 240px;
+            height: 240px;
+            background: radial-gradient(circle at 70% 30%, #083cd3 0%, #083cd3 40%, #0c4df5 41%, #0c4df5 60%, #38bdf8 61%, #38bdf8 80%, rgba(56, 189, 248, 0.4) 81%, transparent 100%);
+            border-radius: 50%;
+            z-index: 0;
+            pointer-events: none;
+            opacity: 0.9;
+            box-shadow: -10px 10px 30px rgba(0, 0, 0, 0.4);
+          }
+
+          .card-item::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            border-radius: 36px;
+            padding: 1px;
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.15), transparent 60%, rgba(56, 189, 248, 0.25));
+            -webkit-mask:
+              linear-gradient(#fff 0 0) content-box,
+              linear-gradient(#fff 0 0);
+            -webkit-mask-composite: xor;
+            mask-composite: exclude;
+            pointer-events: none;
+            z-index: 1;
+          }
+
+          @media (max-width: 1200px) {
+            .education-grid {
+              grid-template-columns: 1fr;
+            }
+          }
+
+          .card-item-header {
+            position: relative;
+            z-index: 2;
+            margin-bottom: 24px;
+            display: grid;
+            grid-template-areas:
+              "title date"
+              "subtitle .";
+            grid-template-columns: 1fr auto;
+            align-items: start;
+            gap: 8px 16px;
+          }
+
+          .card-item-date {
+            grid-area: date;
+            font-size: 0.7rem;
+            color: #ffffff;
+            background: rgba(255, 255, 255, 0.15);
+            border: 1px solid rgba(255, 255, 255, 0.25);
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            white-space: nowrap;
+            justify-self: end;
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            white-space: nowrap;
+            justify-self: end;
+          }
+
+          @media (max-width: 1200px) {
+            .card-item-header {
+              grid-template-areas:
+                "date"
+                "title"
+                "subtitle";
+              grid-template-columns: 1fr;
+              gap: 12px;
+            }
+            .card-item-date {
+              justify-self: start;
+            }
+          }
+
+          .card-item h3 {
+            grid-area: title;
+            font-size: 1.35rem;
+            font-weight: 700;
+            color: var(--text-light);
+            line-height: 1.25;
+          }
+
+          .card-item-subtitle {
+            grid-area: subtitle;
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            font-weight: 500;
+          }
+
+          .card-item-body {
+            position: relative;
+            z-index: 2;
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            line-height: 1.65;
+            flex-grow: 1;
+            display: flex;
+            align-items: flex-start;
+          }
+
+          .skills-section {
+            position: relative;
+            overflow: hidden;
+          }
+
+          .skills-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 24px;
+            margin-top: 40px;
+            max-width: 900px;
+            margin-inline: auto;
+          }
+
+          .skill-card {
+            position: relative;
+            background: rgba(12, 12, 26, 0.3);
+            border: 1px solid rgba(255, 255, 255, 0.04);
+            border-radius: 24px;
+            padding: 28px 16px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 16px;
+            width: 140px;
+            height: 140px;
+            box-shadow:
+              0 20px 40px -15px rgba(0, 0, 0, 0.4),
+              inset 0 1px 0 0 rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            overflow: hidden;
+          }
+
+          .skill-card::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            border-radius: 24px;
+            padding: 1px;
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.08), transparent 60%, rgba(56, 189, 248, 0.15));
+            -webkit-mask:
+              linear-gradient(#fff 0 0) content-box,
+              linear-gradient(#fff 0 0);
+            -webkit-mask-composite: xor;
+            mask-composite: exclude;
+            pointer-events: none;
+            z-index: 1;
+          }
+
+          .skill-card svg {
+            width: 48px;
+            height: 48px;
+            position: relative;
+            z-index: 2;
+            filter: drop-shadow(0 8px 16px rgba(0, 0, 0, 0.3));
+          }
+
+          .skill-card span {
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--text-muted);
+            position: relative;
+            z-index: 2;
+            letter-spacing: 0.5px;
+          }
+
+          .card-item-body ul {
+            list-style-type: none;
+            padding: 0;
+          }
+
+          .card-item-body li {
+            position: relative;
+            padding-left: 20px;
+            margin-bottom: 10px;
+          }
+
+          .card-item-body li::before {
+            content: "→";
+            position: absolute;
+            left: 0;
+            color: var(--primary-light);
+          }
+
+          .project-company {
+            color: var(--primary-light);
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+          }
+          footer {
+            background: rgba(10, 10, 18, 0.9);
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            padding: 30px 0 20px 0;
+            margin-top: 40px;
+            position: relative;
+            z-index: 10;
+          }
+
+          .footer-contacts {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 32px;
+            margin-bottom: 20px;
+          }
+
+          .footer-contact-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--text-muted);
+            transition: color 0.2s ease;
+          }
+
+          .footer-contact-item:hover {
+            color: var(--text-light);
+          }
+
+          .footer-contact-item svg {
+            color: var(--primary-light);
+            flex-shrink: 0;
+          }
+
+          .footer-contact-item .contact-value {
+            font-size: 0.9rem;
+            font-weight: 500;
+          }
+
+          .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.04);
+            padding-top: 20px;
+            text-align: center;
+          }
+
+          .footer-bottom p {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            margin: 0;
+          }
+
+          @media (max-width: 1200px) {
+            .hero-greeting {
+              font-size: 1.8rem;
+            }
+            .hero-title {
+              font-size: 3.8rem;
+            }
+            h2 {
+              font-size: 2rem;
+            }
+          }
+
+          @media (max-width: 1600px) {
+            .hero {
+              flex-direction: column;
+              padding-top: 200px;
+              padding-bottom: 80px;
+              min-height: auto;
+              text-align: center;
+              gap: 80px;
+            }
+
+            .hero-content {
+              display: flex;
+              flex-direction: column;
+              align-items: center;
+            }
+          }
+
+          @media (max-width: 1024px) {
+            .hero-greeting {
+              font-size: 1.6rem;
+            }
+
+            .hero-title {
+              font-size: 3.2rem;
+            }
+
+            .hero-graphics {
+              width: 100%;
+              max-width: 580px;
+            }
+
+            .card-pos-tr {
+              right: 0;
+            }
+
+            .card-pos-tl {
+              left: 0;
+            }
+          }
+
+          @media (max-width: 1200px) {
+            .email-text {
+              display: none;
+            }
+
+            .mail-icon {
+              display: block;
+            }
+
+            .btn-small {
+              padding: 10px;
+              border-radius: 50%;
+            }
+
+            .hero-greeting {
+              font-size: 1.4rem;
+            }
+
+            .hero-title {
+              font-size: 2.4rem;
+            }
+
+            .hero-graphics {
+              width: 100%;
+              height: auto;
+              display: flex;
+              flex-direction: column;
+              gap: 16px;
+            }
+
+            .ui-card {
+              position: relative;
+              width: 100%;
+              top: auto !important;
+              left: auto !important;
+              right: auto !important;
+              bottom: auto !important;
+              transform: none !important;
+              animation: none;
+            }
+          }
+        </style>
+      </head>
+
+      <body>
+        <div class="grid-bg"></div>
+
+        <header>
+          <div class="container">
+            <div class="header-content">
+              <div class="logo">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  style="color: var(--primary)"
+                >
+                  <polyline points="4 17 10 11 4 5"></polyline>
+                  <line x1="12" y1="19" x2="20" y2="19"></line>
+                </svg>
+                <span>www.bshakti.in</span>
+              </div>
+              <div class="btn-small">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="14"
+                  height="14"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="mail-icon"
+                >
+                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                  <polyline points="22,6 12,13 2,6"></polyline>
+                </svg>
+                <span class="email-text">basantrajshakti@gmail.com</span>
+              </div>
+            </div>
+          </div>
+        </header>
+
+        <section class="hero container">
+          <div class="hero-content">
+            <h2 class="hero-greeting">Hi, I'm Basantraj Shakti</h2>
+            <h1 class="hero-title">
+              Founding + Senior <br />
+              Software Engineer
+            </h1>
+
+            <p class="hero-desc">
+              Founding Engineer building high-performance applications for <span class="pill pill-green">AI startups</span>, <span class="pill pill-orange">enterprises</span>, and
+              <span class="pill pill-blue">agencies</span>.
+            </p>
+          </div>
+
+          <div class="hero-graphics">
+            <div class="ui-card card-pos-center">
+              <div class="stat-row">
+                <div class="stat-icon blue">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+                  </svg>
+                </div>
+                <div class="stat-info">
+                  <h4>Load Time Reduced</h4>
+                  <p>31s ➜ 3.4s</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="ui-card card-pos-tr">
+              <div class="stat-row">
+                <div class="stat-icon green">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline>
+                    <polyline points="17 6 23 6 23 12"></polyline>
+                  </svg>
+                </div>
+                <div class="stat-info">
+                  <h4>Revenue Growth</h4>
+                  <p>+45% YoY</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="ui-card card-pos-bl">
+              <div class="stat-row">
+                <div class="stat-icon orange">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <ellipse cx="12" cy="5" rx="9" ry="3"></ellipse>
+                    <path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"></path>
+                    <path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"></path>
+                  </svg>
+                </div>
+                <div class="stat-info">
+                  <h4>Data Handled</h4>
+                  <p>27M+ Records</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="ui-card card-pos-br">
+              <div class="stat-row">
+                <div class="stat-icon purple">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path>
+                    <polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline>
+                    <line x1="12" y1="22.08" x2="12" y2="12"></line>
+                  </svg>
+                </div>
+                <div class="stat-info">
+                  <h4>Bundle Reduced</h4>
+                  <p>35MB ➜ 3.5MB</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="ui-card card-pos-tl">
+              <div class="stat-row">
+                <div class="stat-icon teal">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                    <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                  </svg>
+                </div>
+                <div class="stat-info">
+                  <h4>Conversion</h4>
+                  <p>+30% Rate</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="ui-card card-pos-tc">
+              <div class="stat-row">
+                <div class="stat-icon pink">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
+                    <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
+                  </svg>
+                </div>
+                <div class="stat-info">
+                  <h4>Experience</h4>
+                  <p>4+ Years</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="ui-card card-pos-bc">
+              <div class="stat-row">
+                <div class="stat-icon yellow">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+                  </svg>
+                </div>
+                <div class="stat-info">
+                  <h4>Projects</h4>
+                  <p>15+ Shipped</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="experience-section container">
+          <div class="section-header">
+            <h2>My Experience</h2>
+          </div>
+          <div class="experience-list">
+            <div class="experience-row">
+              <div class="experience-row-left">March 2026 — Present</div>
+              <div class="experience-row-right">
+                <h3>AlertMi</h3>
+                <p>Founding Engineer</p>
+              </div>
+            </div>
+
+            <div class="experience-row">
+              <div class="experience-row-left">March 2023 — Present</div>
+              <div class="experience-row-right">
+                <h3>Lumit / Valco Melton</h3>
+                <p>Senior Software Engineer</p>
+              </div>
+            </div>
+
+            <div class="experience-row">
+              <div class="experience-row-left">May 2022 — February 2023</div>
+              <div class="experience-row-right">
+                <h3>Blacksof</h3>
+                <p>Junior Frontend Developer</p>
+              </div>
+            </div>
+
+            <div class="experience-row">
+              <div class="experience-row-left">October 2021 — December 2021</div>
+              <div class="experience-row-right">
+                <h3>Inkers Technology</h3>
+                <p>Full Stack Intern</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="skills-section container">
+          <div class="section-header">
+            <h2>Skills</h2>
+          </div>
+          <div class="skills-grid">
+            <div class="skill-card">
+              <svg xmlns="http://www.w3.org/2000/svg" width="256" height="256" fill="none" viewBox="0 0 256 256">
+                <rect width="256" height="256" fill="#242938" rx="60" />
+                <path
+                  fill="#00D8FF"
+                  d="M128.001 146.951C138.305 146.951 146.657 138.598 146.657 128.295C146.657 117.992 138.305 109.639 128.001 109.639C117.698 109.639 109.345 117.992 109.345 128.295C109.345 138.598 117.698 146.951 128.001 146.951Z"
+                />
+                <path
+                  fill-rule="evenodd"
+                  stroke="#00D8FF"
+                  stroke-width="8.911"
+                  d="M128.002 90.3633C153.05 90.3633 176.319 93.9575 193.864 99.9976C215.003 107.275 228 118.306 228 128.295C228 138.704 214.226 150.423 191.525 157.944C174.363 163.63 151.779 166.598 128.002 166.598C103.624 166.598 80.5389 163.812 63.1834 157.881C41.2255 150.376 28 138.506 28 128.295C28 118.387 40.4096 107.441 61.2515 100.175C78.8617 94.0353 102.705 90.3633 127.998 90.3633H128.002Z"
+                  clip-rule="evenodd"
+                />
+                <path
+                  fill-rule="evenodd"
+                  stroke="#00D8FF"
+                  stroke-width="8.911"
+                  d="M94.9811 109.438C107.495 87.7402 122.232 69.3783 136.23 57.1971C153.094 42.5206 169.144 36.7728 177.796 41.7623C186.813 46.9623 190.084 64.7496 185.259 88.1712C181.614 105.879 172.9 126.925 161.021 147.523C148.842 168.641 134.897 187.247 121.09 199.315C103.619 214.587 86.7284 220.114 77.8833 215.013C69.3003 210.067 66.0181 193.846 70.1356 172.161C73.6145 153.838 82.3451 131.349 94.977 109.438L94.9811 109.438Z"
+                  clip-rule="evenodd"
+                />
+                <path
+                  fill-rule="evenodd"
+                  stroke="#00D8FF"
+                  stroke-width="8.911"
+                  d="M95.0123 147.578C82.4633 125.904 73.9194 103.962 70.3531 85.7517C66.0602 63.8109 69.0954 47.0355 77.7401 42.0315C86.7485 36.8163 103.792 42.866 121.674 58.7437C135.194 70.7479 149.077 88.8052 160.99 109.383C173.204 130.481 182.358 151.856 185.919 169.844C190.425 192.608 186.778 210.001 177.941 215.116C169.367 220.08 153.676 214.825 136.945 200.427C122.809 188.263 107.685 169.468 95.0123 147.578Z"
+                  clip-rule="evenodd"
+                />
+              </svg>
+              <span>React.js</span>
+            </div>
+            <div class="skill-card">
+              <svg xmlns="http://www.w3.org/2000/svg" width="256" height="256" fill="none" viewBox="0 0 256 256">
+                <rect width="256" height="256" fill="#242938" rx="60" />
+                <path
+                  fill="#fff"
+                  d="M121.451 28.0537C121.021 28.0928 119.652 28.2297 118.42 28.3274C90.0137 30.8885 63.4057 46.216 46.5533 69.7742C37.1691 82.8729 31.1672 97.7312 28.8993 113.469C28.0978 118.963 28 120.586 28 128.034C28 135.483 28.0978 137.106 28.8993 142.599C34.3343 180.155 61.0596 211.71 97.306 223.401C103.797 225.493 110.639 226.92 118.42 227.78C121.451 228.112 134.549 228.112 137.58 227.78C151.011 226.294 162.389 222.971 173.611 217.242C175.331 216.363 175.664 216.128 175.429 215.933C175.273 215.815 167.941 205.981 159.144 194.095L143.152 172.492L123.112 142.834C112.086 126.529 103.015 113.195 102.936 113.195C102.858 113.176 102.78 126.353 102.741 142.443C102.682 170.615 102.663 171.749 102.311 172.413C101.803 173.371 101.412 173.762 100.59 174.193C99.9648 174.505 99.4174 174.564 96.4653 174.564H93.0831L92.1838 173.997C91.5973 173.626 91.1672 173.137 90.8739 172.57L90.4633 171.69L90.5024 132.492L90.5611 93.2737L91.1672 92.5112C91.48 92.1007 92.1447 91.5728 92.6139 91.3186C93.4154 90.9276 93.7283 90.8885 97.1105 90.8885C101.099 90.8885 101.763 91.0449 102.8 92.1789C103.093 92.4917 113.943 108.836 126.925 128.523C139.906 148.21 157.658 175.092 166.377 188.288L182.213 212.277L183.015 211.749C190.111 207.135 197.619 200.566 203.562 193.723C216.211 179.197 224.364 161.485 227.101 142.599C227.902 137.106 228 135.483 228 128.034C228 120.586 227.902 118.963 227.101 113.469C221.666 75.913 194.94 44.3587 158.694 32.6676C152.301 30.5953 145.498 29.1681 137.873 28.3079C135.996 28.1124 123.073 27.8973 121.451 28.0537ZM162.389 88.5425C163.327 89.0117 164.09 89.911 164.364 90.8494C164.52 91.3577 164.559 102.228 164.52 126.724L164.461 161.876L158.264 152.374L152.047 142.873V117.321C152.047 100.801 152.125 91.5141 152.242 91.0645C152.555 89.9697 153.239 89.1095 154.178 88.6011C154.979 88.1906 155.273 88.1515 158.342 88.1515C161.236 88.1515 161.744 88.1906 162.389 88.5425Z"
+                />
+              </svg>
+              <span>Next.js</span>
+            </div>
+            <div class="skill-card">
+              <svg xmlns="http://www.w3.org/2000/svg" width="256" height="256" fill="none" viewBox="0 0 256 256">
+                <rect width="256" height="256" fill="#007ACC" rx="60" />
+                <path
+                  fill="#fff"
+                  d="M56.6112 128.849L56.5299 139.333H73.1902H89.8505L89.8505 186.673V234.012H101.635H113.419V186.673L113.419 139.333H130.079H146.739V129.052C146.739 123.363 146.618 118.609 146.455 118.487C146.333 118.325 126.056 118.243 101.472 118.284L56.7331 118.406L56.6112 128.849Z"
+                />
+                <path
+                  fill="#fff"
+                  d="M206.567 118.108C213.068 119.734 218.026 122.619 222.577 127.332C222.577 127.332 228.428 134.444 228.713 135.541C228.794 135.866 217.66 143.343 210.915 147.528C210.671 147.691 209.695 146.634 208.598 145.009C205.307 140.214 201.853 138.141 196.57 137.776C188.809 137.247 183.811 141.311 183.852 148.097C183.852 150.088 184.136 151.266 184.949 152.892C186.655 156.427 189.825 158.54 199.781 162.847C218.107 170.731 225.949 175.932 230.826 183.327C236.271 191.576 237.49 204.742 233.792 214.535C229.729 225.181 219.651 232.414 205.469 234.812C201.081 235.584 190.678 235.462 185.965 234.609C175.684 232.78 165.932 227.701 159.918 221.037C157.561 218.436 152.969 211.65 153.254 211.162C153.375 211 154.432 210.35 155.61 209.659C156.748 209.009 161.056 206.53 165.119 204.173L172.474 199.906L174.018 202.182C176.172 205.473 180.885 209.984 183.73 211.487C191.897 215.795 203.113 215.185 208.639 210.228C210.996 208.074 211.971 205.839 211.971 202.548C211.971 199.581 211.605 198.281 210.061 196.046C208.07 193.202 204.007 190.804 192.466 185.806C179.26 180.117 173.571 176.582 168.37 170.974C165.363 167.724 162.518 162.522 161.34 158.174C160.365 154.558 160.121 145.496 160.893 141.839C163.615 129.08 173.246 120.181 187.143 117.539C191.654 116.686 202.137 117.011 206.567 118.108Z"
+                />
+              </svg>
+              <span>TypeScript</span>
+            </div>
+            <div class="skill-card">
+              <svg xmlns="http://www.w3.org/2000/svg" width="256" height="256" viewBox="0 0 256 256" fill="none">
+                <rect width="256" height="256" rx="60" fill="#F0DB4F" />
+                <path
+                  d="M67.3117 213.932L86.9027 202.076C90.6821 208.777 94.1202 214.447 102.367 214.447C110.272 214.447 115.256 211.355 115.256 199.327V117.529H139.314V199.667C139.314 224.584 124.708 235.926 103.398 235.926C84.1533 235.926 72.9819 225.959 67.3113 213.93"
+                  fill="#323330"
+                />
+                <path
+                  d="M152.381 211.354L171.969 200.013C177.126 208.434 183.828 214.62 195.684 214.62C205.653 214.62 212.009 209.636 212.009 202.762C212.009 194.514 205.479 191.592 194.481 186.782L188.468 184.203C171.111 176.815 159.597 167.535 159.597 147.945C159.597 129.901 173.345 116.153 194.826 116.153C210.12 116.153 221.118 121.481 229.022 135.4L210.291 147.429C206.166 140.04 201.7 137.119 194.826 137.119C187.78 137.119 183.312 141.587 183.312 147.429C183.312 154.646 187.78 157.568 198.09 162.037L204.104 164.614C224.553 173.379 236.067 182.313 236.067 202.418C236.067 224.072 219.055 235.928 196.2 235.928C173.861 235.928 159.426 225.274 152.381 211.354"
+                  fill="#323330"
+                />
+              </svg>
+              <span>JavaScript</span>
+            </div>
+            <div class="skill-card">
+              <svg xmlns="http://www.w3.org/2000/svg" width="256" height="256" fill="none" viewBox="0 0 256 256">
+                <rect width="256" height="256" fill="#242938" rx="60" />
+                <path
+                  fill="#81CD39"
+                  d="M119.878 31.1164C124.797 28.3008 131.203 28.2883 136.117 31.1164C160.839 45.0855 185.569 59.0332 210.287 73.0108C214.937 75.6296 218.046 80.8038 217.999 86.1608V170.206C218.034 175.785 214.617 181.083 209.712 183.642C185.071 197.535 160.442 211.444 135.805 225.337C130.786 228.207 124.251 227.986 119.387 224.88C112 220.598 104.6 216.336 97.2121 212.058C95.7022 211.158 94.0004 210.442 92.9345 208.978C93.8766 207.708 95.5618 207.55 96.9309 206.995C100.014 206.014 102.847 204.44 105.679 202.913C106.396 202.423 107.27 202.611 107.957 203.049C114.274 206.671 120.536 210.399 126.874 213.986C128.226 214.767 129.595 213.73 130.751 213.086C154.931 199.419 179.141 185.805 203.318 172.134C204.214 171.703 204.709 170.752 204.636 169.771C204.653 142.046 204.64 114.317 204.645 86.5918C204.747 85.4785 204.103 84.455 203.096 83.999C178.541 70.1702 153.997 56.3205 129.446 42.4882C128.575 41.8893 127.426 41.8878 126.554 42.4837C102.002 56.3205 77.4638 70.1832 52.9124 84.011C51.9092 84.4675 51.236 85.4745 51.3554 86.5918C51.3596 114.317 51.3554 142.046 51.3554 169.775C51.2682 170.756 51.801 171.687 52.6906 172.109C59.2422 175.824 65.8024 179.513 72.3582 183.216C76.0516 185.203 80.5863 186.385 84.6555 184.862C88.2463 183.574 90.7633 179.909 90.6948 176.097C90.7288 148.534 90.6778 120.967 90.7203 93.4078C90.6309 92.1841 91.7912 91.1731 92.981 91.2885C96.1292 91.267 99.281 91.2461 102.429 91.297C103.743 91.267 104.647 92.5847 104.485 93.8174C104.472 121.555 104.519 149.293 104.464 177.03C104.472 184.423 101.435 192.467 94.5973 196.084C86.1737 200.447 75.7619 199.522 67.4399 195.338C60.2355 191.742 53.3603 187.498 46.2838 183.646C41.3661 181.101 37.966 175.782 38.0006 170.207V86.1608C37.949 80.6929 41.1825 75.4248 45.9764 72.8445C70.6133 58.9408 95.2461 45.0261 119.878 31.1164Z"
+                />
+                <path
+                  fill="#81CD39"
+                  d="M141.372 89.3351C152.117 88.6433 163.62 88.9255 173.289 94.2185C180.776 98.2754 184.926 106.789 185.058 115.106C184.849 116.227 183.676 116.846 182.605 116.769C179.488 116.765 176.369 116.812 173.252 116.748C171.929 116.799 171.161 115.58 170.995 114.411C170.099 110.431 167.928 106.49 164.183 104.57C158.433 101.692 151.767 101.837 145.497 101.897C140.92 102.139 135.998 102.536 132.12 105.227C129.143 107.266 128.239 111.382 129.301 114.697C130.303 117.077 133.05 117.845 135.299 118.553C148.248 121.94 161.97 121.602 174.672 126.059C179.931 127.876 185.075 131.409 186.875 136.915C189.23 144.295 188.198 153.115 182.947 159.039C178.689 163.914 172.488 166.568 166.303 168.009C158.075 169.844 149.536 169.891 141.18 169.076C133.323 168.18 125.146 166.116 119.081 160.763C113.894 156.259 111.361 149.241 111.612 142.469C111.672 141.325 112.811 140.527 113.907 140.621C117.046 140.596 120.186 140.587 123.325 140.626C124.58 140.536 125.509 141.62 125.574 142.802C126.152 146.593 127.577 150.573 130.884 152.82C137.264 156.937 145.271 156.655 152.577 156.77C158.63 156.502 165.425 156.421 170.364 152.42C172.97 150.138 173.742 146.32 173.038 143.036C172.275 140.263 169.374 138.971 166.883 138.126C154.1 134.083 140.224 135.55 127.565 130.977C122.425 129.161 117.455 125.727 115.481 120.447C112.726 112.974 113.988 103.73 119.789 98.0061C125.445 92.312 133.609 90.1192 141.372 89.3346V89.3351"
+                />
+              </svg>
+              <span>Node.js</span>
+            </div>
+            <div class="skill-card">
+              <svg xmlns="http://www.w3.org/2000/svg" width="256" height="256" fill="none" viewBox="0 0 256 256">
+                <rect width="256" height="256" fill="#023430" rx="60" />
+                <path
+                  fill="#10AA50"
+                  d="M171.173 107.591C160.636 61.1097 138.676 48.7357 133.074 39.9886C130.764 36.1353 128.717 32.1299 126.949 28C126.653 32.1292 126.109 34.7307 122.599 37.862C115.552 44.1454 85.6217 68.5354 83.1028 121.348C80.756 170.59 119.303 200.953 124.395 204.092C128.311 206.019 133.08 204.133 135.407 202.364C153.988 189.612 179.376 155.614 171.193 107.591"
+                />
+                <path
+                  fill="#B8C4C2"
+                  d="M128.545 177.871C127.575 190.059 126.88 197.141 124.416 204.106C124.416 204.106 126.033 215.709 127.169 228H131.188C132.147 219.345 133.61 210.753 135.572 202.268C130.369 199.708 128.745 188.566 128.545 177.871Z"
+                />
+                <path
+                  fill="#12924F"
+                  d="M135.565 202.275C130.307 199.846 128.786 188.469 128.552 177.871C129.852 160.388 130.231 142.849 129.688 125.326C129.412 116.132 129.818 40.1676 127.423 29.0461C129.062 32.8129 130.949 36.4662 133.074 39.9818C138.676 48.7358 160.643 61.1097 171.173 107.591C179.376 155.532 154.126 189.44 135.565 202.275Z"
+                />
+              </svg>
+              <span>MongoDB</span>
+            </div>
+            <div class="skill-card">
+              <svg xmlns="http://www.w3.org/2000/svg" width="256" height="256" fill="none" viewBox="0 0 256 256">
+                <rect width="256" height="256" fill="#2396ED" rx="60" />
+                <path
+                  fill="#fff"
+                  d="M141.187 122.123H161.904V103.379H141.187V122.123ZM116.525 122.123H137.241V103.379H116.525V122.123ZM92.3554 122.123H113.072V103.379H92.3554V122.123ZM68.1859 122.123H88.4093V103.379H68.1859V122.123ZM43.5233 122.123H64.2399V103.379H43.5233V122.123ZM68.1859 99.4333H88.4093V80.6896H68.1859V99.4333ZM92.3554 99.4333H113.072V80.6896H92.3554V99.4333ZM116.525 99.4333H137.241V80.6896H116.525V99.4333ZM116.525 76.7436H137.241V58H116.525V76.7436ZM228 113.738C228 113.738 219.121 105.352 200.871 108.312C198.898 94.0075 183.607 85.6222 183.607 85.6222C183.607 85.6222 169.303 102.886 179.661 122.123C176.702 123.603 171.769 125.576 164.37 125.576H28.7257C26.2594 134.948 26.2594 197.097 94.3284 197.097C143.16 197.097 179.661 174.408 196.925 132.974C222.574 134.948 228 113.738 228 113.738Z"
+                />
+              </svg>
+              <span>Docker</span>
+            </div>
+            <div class="skill-card">
+              <svg xmlns="http://www.w3.org/2000/svg" width="256" height="256" fill="none" viewBox="0 0 256 256">
+                <rect width="256" height="256" fill="#242938" rx="60" />
+                <path
+                  fill="#fff"
+                  d="M84.7447 111.961C84.7447 114.395 85.0079 116.368 85.4684 117.816C85.9947 119.263 86.6526 120.842 87.5737 122.553C87.9026 123.079 88.0342 123.605 88.0342 124.066C88.0342 124.724 87.6395 125.382 86.7842 126.039L82.6395 128.803C82.0474 129.197 81.4553 129.395 80.929 129.395C80.2711 129.395 79.6132 129.066 78.9553 128.474C78.0342 127.487 77.2447 126.434 76.5869 125.382C75.929 124.263 75.2711 123.013 74.5474 121.5C69.4158 127.553 62.9684 130.579 55.2053 130.579C49.679 130.579 45.2711 129 42.0474 125.842C38.8237 122.684 37.179 118.474 37.179 113.211C37.179 107.618 39.1526 103.079 43.1658 99.6579C47.179 96.2368 52.5079 94.5263 59.2842 94.5263C61.5211 94.5263 63.8237 94.7237 66.2579 95.0526C68.6921 95.3816 71.1921 95.9079 73.8237 96.5V91.6974C73.8237 86.6974 72.7711 83.2105 70.7316 81.1711C68.6263 79.1316 65.0737 78.1447 60.0079 78.1447C57.7053 78.1447 55.3368 78.4079 52.9026 79C50.4684 79.5921 48.1 80.3158 45.7974 81.2368C44.7447 81.6974 43.9553 81.9605 43.4947 82.0921C43.0342 82.2237 42.7053 82.2895 42.4421 82.2895C41.5211 82.2895 41.0605 81.6316 41.0605 80.25V77.0263C41.0605 75.9737 41.1921 75.1842 41.5211 74.7237C41.85 74.2632 42.4421 73.8026 43.3632 73.3421C45.6658 72.1579 48.429 71.1711 51.6526 70.3816C54.8763 69.5263 58.2974 69.1316 61.9158 69.1316C69.7447 69.1316 75.4684 70.9079 79.1526 74.4605C82.7711 78.0132 84.6132 83.4079 84.6132 90.6447V111.961H84.7447ZM58.0342 121.961C60.2053 121.961 62.4421 121.566 64.8105 120.776C67.179 119.987 69.2842 118.539 71.0605 116.566C72.1132 115.316 72.9026 113.934 73.2974 112.355C73.6921 110.776 73.9553 108.868 73.9553 106.632V103.868C72.0474 103.408 70.0079 103.013 67.9026 102.75C65.7974 102.487 63.7579 102.355 61.7184 102.355C57.3105 102.355 54.0868 103.211 51.9158 104.987C49.7447 106.763 48.6921 109.263 48.6921 112.553C48.6921 115.645 49.4816 117.947 51.1263 119.526C52.7053 121.171 55.0079 121.961 58.0342 121.961ZM110.863 129.066C109.679 129.066 108.889 128.868 108.363 128.408C107.837 128.013 107.376 127.092 106.982 125.842L91.5211 74.9868C91.1263 73.6711 90.929 72.8158 90.929 72.3553C90.929 71.3026 91.4553 70.7105 92.5079 70.7105H98.9553C100.205 70.7105 101.061 70.9079 101.521 71.3684C102.047 71.7632 102.442 72.6842 102.837 73.9342L113.889 117.487L124.153 73.9342C124.482 72.6184 124.876 71.7632 125.403 71.3684C125.929 70.9737 126.85 70.7105 128.034 70.7105H133.297C134.547 70.7105 135.403 70.9079 135.929 71.3684C136.455 71.7632 136.916 72.6842 137.179 73.9342L147.574 118.013L158.955 73.9342C159.35 72.6184 159.811 71.7632 160.271 71.3684C160.797 70.9737 161.653 70.7105 162.837 70.7105H168.955C170.008 70.7105 170.6 71.2368 170.6 72.3553C170.6 72.6842 170.534 73.0132 170.468 73.4079C170.403 73.8026 170.271 74.3289 170.008 75.0526L154.153 125.908C153.758 127.224 153.297 128.079 152.771 128.474C152.245 128.868 151.389 129.132 150.271 129.132H144.613C143.363 129.132 142.508 128.934 141.982 128.474C141.455 128.013 140.995 127.158 140.732 125.842L130.534 83.4079L120.403 125.776C120.074 127.092 119.679 127.947 119.153 128.408C118.626 128.868 117.705 129.066 116.521 129.066H110.863ZM195.403 130.842C191.982 130.842 188.561 130.447 185.271 129.658C181.982 128.868 179.416 128.013 177.705 127.026C176.653 126.434 175.929 125.776 175.666 125.184C175.403 124.592 175.271 123.934 175.271 123.342V119.987C175.271 118.605 175.797 117.947 176.784 117.947C177.179 117.947 177.574 118.013 177.968 118.145C178.363 118.276 178.955 118.539 179.613 118.803C181.85 119.789 184.284 120.579 186.85 121.105C189.482 121.632 192.047 121.895 194.679 121.895C198.824 121.895 202.047 121.171 204.284 119.724C206.521 118.276 207.705 116.171 207.705 113.474C207.705 111.632 207.113 110.118 205.929 108.868C204.745 107.618 202.508 106.5 199.284 105.447L189.745 102.487C184.942 100.974 181.389 98.7368 179.218 95.7763C177.047 92.8816 175.929 89.6579 175.929 86.2368C175.929 83.4737 176.521 81.0395 177.705 78.9342C178.889 76.8289 180.468 74.9868 182.442 73.5395C184.416 72.0263 186.653 70.9079 189.284 70.1184C191.916 69.3289 194.679 69 197.574 69C199.021 69 200.534 69.0658 201.982 69.2632C203.495 69.4605 204.876 69.7237 206.258 69.9868C207.574 70.3158 208.824 70.6447 210.008 71.0395C211.192 71.4342 212.113 71.8289 212.771 72.2237C213.692 72.75 214.35 73.2763 214.745 73.8684C215.139 74.3947 215.337 75.1184 215.337 76.0395V79.1316C215.337 80.5132 214.811 81.2368 213.824 81.2368C213.297 81.2368 212.442 80.9737 211.324 80.4474C207.574 78.7368 203.363 77.8816 198.692 77.8816C194.942 77.8816 191.982 78.4737 189.942 79.7237C187.903 80.9737 186.85 82.8816 186.85 85.5789C186.85 87.4211 187.508 89 188.824 90.25C190.139 91.5 192.574 92.75 196.061 93.8684L205.403 96.8289C210.139 98.3421 213.561 100.447 215.6 103.145C217.639 105.842 218.626 108.934 218.626 112.355C218.626 115.184 218.034 117.75 216.916 119.987C215.732 122.224 214.153 124.197 212.113 125.776C210.074 127.421 207.639 128.605 204.811 129.461C201.85 130.382 198.758 130.842 195.403 130.842Z"
+                />
+                <path
+                  fill="#F90"
+                  fill-rule="evenodd"
+                  d="M207.837 162.816C186.192 178.803 154.745 187.29 127.705 187.29C89.8105 187.29 55.6658 173.276 29.8763 149.987C27.8369 148.145 29.679 145.645 32.1132 147.092C60.0079 163.276 94.4158 173.079 130.008 173.079C154.021 173.079 180.403 168.079 204.679 157.816C208.297 156.171 211.389 160.184 207.837 162.816Z"
+                  clip-rule="evenodd"
+                />
+                <path
+                  fill="#F90"
+                  fill-rule="evenodd"
+                  d="M216.85 152.553C214.087 149 198.561 150.842 191.521 151.697C189.416 151.961 189.087 150.118 190.995 148.737C203.363 140.053 223.692 142.553 226.061 145.447C228.429 148.408 225.403 168.737 213.824 178.474C212.047 179.987 210.337 179.197 211.126 177.224C213.758 170.711 219.613 156.039 216.85 152.553Z"
+                  clip-rule="evenodd"
+                />
+              </svg>
+              <span>AWS</span>
+            </div>
+          </div>
+        </section>
+
+        <section class="education-section container">
+          <div class="section-header">
+            <h2>Education</h2>
+          </div>
+          <div class="education-grid">
+            <div class="card-item">
+              <div class="card-item-header">
+                <span class="card-item-date">August 2019 - April 2022</span>
+                <h3>Bachelor of Computer Applications (BCA)</h3>
+                <span class="card-item-subtitle">Rungta College of Science and Technology</span>
+              </div>
+              <div class="card-item-body">
+                <p>Computer Science — 87.76%</p>
+              </div>
+            </div>
+
+            <div class="card-item">
+              <div class="card-item-header">
+                <span class="card-item-date">July 2017 - April 2019</span>
+                <h3>Higher Secondary Education</h3>
+                <span class="card-item-subtitle">Kendriya Vidyalaya Sangathan</span>
+              </div>
+              <div class="card-item-body">
+                <p>Computer Science Focus</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="projects-section container">
+          <div class="section-header">
+            <h2>Projects</h2>
+          </div>
+          <div class="projects-grid">
+            <div class="project-card">
+              <div class="project-card-badge">AI / Agent / SaaS</div>
+              <div class="project-card-header">
+                <span class="project-company">AlertMi</span>
+                <h3>AlertMi AI-Agent</h3>
+                <p>AI agent analyzing workspace emails for analytics.</p>
+              </div>
+              <div class="project-card-divider"></div>
+              <ul class="project-card-list">
+                <li>
+                  <div class="check-badge">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="4">
+                      <polyline points="20 6 9 17 4 12"></polyline>
+                    </svg>
+                  </div>
+                  <span>Engineered email parser multi-agent engine.</span>
+                </li>
+                <li>
+                  <div class="check-badge">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="4">
+                      <polyline points="20 6 9 17 4 12"></polyline>
+                    </svg>
+                  </div>
+                  <span>Built Dockerized desktop cross-platform installers.</span>
+                </li>
+              </ul>
+            </div>
+
+            <div class="project-card">
+              <div class="project-card-badge">SaaS</div>
+              <div class="project-card-header">
+                <span class="project-company">Lumit / Valco Melton</span>
+                <h3>Prod Inspekt</h3>
+                <p>Industrial scheduling and visualization system.</p>
+              </div>
+              <div class="project-card-divider"></div>
+              <ul class="project-card-list">
+                <li>
+                  <div class="check-badge">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="4">
+                      <polyline points="20 6 9 17 4 12"></polyline>
+                    </svg>
+                  </div>
+                  <span>Handled 27M+ records with virtualization.</span>
+                </li>
+                <li>
+                  <div class="check-badge">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="4">
+                      <polyline points="20 6 9 17 4 12"></polyline>
+                    </svg>
+                  </div>
+                  <span>Optimized frontend to drop load time by 90%.</span>
+                </li>
+              </ul>
+            </div>
+
+            <div class="project-card">
+              <div class="project-card-badge">SaaS</div>
+              <div class="project-card-header">
+                <span class="project-company">Lumit</span>
+                <h3>Coat and Weight Inspekt</h3>
+                <p>High-resolution industrial defect annotation platform.</p>
+              </div>
+              <div class="project-card-divider"></div>
+              <ul class="project-card-list">
+                <li>
+                  <div class="check-badge">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="4">
+                      <polyline points="20 6 9 17 4 12"></polyline>
+                    </svg>
+                  </div>
+                  <span>Created canvas defect label annotation tools.</span>
+                </li>
+                <li>
+                  <div class="check-badge">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="4">
+                      <polyline points="20 6 9 17 4 12"></polyline>
+                    </svg>
+                  </div>
+                  <span>Replaced complex image software editing workflows.</span>
+                </li>
+              </ul>
+            </div>
+
+            <div class="project-card">
+              <div class="project-card-badge">AI / SaaS</div>
+              <div class="project-card-header">
+                <span class="project-company">Lumit</span>
+                <h3>AI 3D Vision</h3>
+                <p>Offline database query generation via local LLMs.</p>
+              </div>
+              <div class="project-card-divider"></div>
+              <ul class="project-card-list">
+                <li>
+                  <div class="check-badge">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="4">
+                      <polyline points="20 6 9 17 4 12"></polyline>
+                    </svg>
+                  </div>
+                  <span>Quantized local LLaMA models for offline queries.</span>
+                </li>
+                <li>
+                  <div class="check-badge">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="4">
+                      <polyline points="20 6 9 17 4 12"></polyline>
+                    </svg>
+                  </div>
+                  <span>Built NLP chatbot running on 3-4GB RAM systems.</span>
+                </li>
+              </ul>
+            </div>
+
+            <div class="project-card">
+              <div class="project-card-badge">SaaS</div>
+              <div class="project-card-header">
+                <span class="project-company">7Unit Softwares</span>
+                <h3>WeUnit</h3>
+                <p>System speed optimization and stack modernization.</p>
+              </div>
+              <div class="project-card-divider"></div>
+              <ul class="project-card-list">
+                <li>
+                  <div class="check-badge">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="4">
+                      <polyline points="20 6 9 17 4 12"></polyline>
+                    </svg>
+                  </div>
+                  <span>Modernized core technology stacks to Node 20.</span>
+                </li>
+                <li>
+                  <div class="check-badge">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="4">
+                      <polyline points="20 6 9 17 4 12"></polyline>
+                    </svg>
+                  </div>
+                  <span>Boosted loading speeds by 1100% (55s to 5s).</span>
+                </li>
+              </ul>
+            </div>
+
+            <div class="project-card">
+              <div class="project-card-badge">Astro / SSR</div>
+              <div class="project-card-header">
+                <span class="project-company">Blacksof</span>
+                <h3>Blacksof Website</h3>
+                <p>Full-stack agency platform performance overhaul.</p>
+              </div>
+              <div class="project-card-divider"></div>
+              <ul class="project-card-list">
+                <li>
+                  <div class="check-badge">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="4">
+                      <polyline points="20 6 9 17 4 12"></polyline>
+                    </svg>
+                  </div>
+                  <span>Rebuilt portal using Astro SSR layouts.</span>
+                </li>
+                <li>
+                  <div class="check-badge">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="4">
+                      <polyline points="20 6 9 17 4 12"></polyline>
+                    </svg>
+                  </div>
+                  <span>Drove a 30% increase in lead conversions.</span>
+                </li>
+              </ul>
+            </div>
+
+            <div class="project-card">
+              <div class="project-card-badge">3D / Web App</div>
+              <div class="project-card-header">
+                <span class="project-company">Blacksof Portfolio</span>
+                <h3>Innvolution Portal</h3>
+                <p>Interactive medical platform with global mapping.</p>
+              </div>
+              <div class="project-card-divider"></div>
+              <ul class="project-card-list">
+                <li>
+                  <div class="check-badge">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="4">
+                      <polyline points="20 6 9 17 4 12"></polyline>
+                    </svg>
+                  </div>
+                  <span>Created Three.js interactive 3D world maps.</span>
+                </li>
+                <li>
+                  <div class="check-badge">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="4">
+                      <polyline points="20 6 9 17 4 12"></polyline>
+                    </svg>
+                  </div>
+                  <span>Built responsive layouts across 35 pages.</span>
+                </li>
+              </ul>
+            </div>
+
+            <div class="project-card">
+              <div class="project-card-badge">Web App / Maps</div>
+              <div class="project-card-header">
+                <span class="project-company">Blacksof Portfolio</span>
+                <h3>CPO Assist</h3>
+                <p>EV charging network location mapping portal.</p>
+              </div>
+              <div class="project-card-divider"></div>
+              <ul class="project-card-list">
+                <li>
+                  <div class="check-badge">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="4">
+                      <polyline points="20 6 9 17 4 12"></polyline>
+                    </svg>
+                  </div>
+                  <span>Optimized map markers and loading layout.</span>
+                </li>
+                <li>
+                  <div class="check-badge">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="4">
+                      <polyline points="20 6 9 17 4 12"></polyline>
+                    </svg>
+                  </div>
+                  <span>Integrated full keyboard accessibility focus layers.</span>
+                </li>
+              </ul>
+            </div>
+
+            <div class="project-card">
+              <div class="project-card-badge">3D / Tool</div>
+              <div class="project-card-header">
+                <span class="project-company">Inkers Technology</span>
+                <h3>3D Model Voxelizer</h3>
+                <p>3D building layout to modular voxel translator.</p>
+              </div>
+              <div class="project-card-divider"></div>
+              <ul class="project-card-list">
+                <li>
+                  <div class="check-badge">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="4">
+                      <polyline points="20 6 9 17 4 12"></polyline>
+                    </svg>
+                  </div>
+                  <span>Rendered 3D voxel grids with React/Three.js.</span>
+                </li>
+                <li>
+                  <div class="check-badge">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="4">
+                      <polyline points="20 6 9 17 4 12"></polyline>
+                    </svg>
+                  </div>
+                  <span>Programmed math for area and volume metrics.</span>
+                </li>
+              </ul>
+            </div>
+
+            <div class="project-card">
+              <div class="project-card-badge">Library</div>
+              <div class="project-card-header">
+                <span class="project-company">Inkers Technology</span>
+                <h3>Gantt Chart Library</h3>
+                <p>Custom construction schedule task calendar library.</p>
+              </div>
+              <div class="project-card-divider"></div>
+              <ul class="project-card-list">
+                <li>
+                  <div class="check-badge">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="4">
+                      <polyline points="20 6 9 17 4 12"></polyline>
+                    </svg>
+                  </div>
+                  <span>Built custom Gantt layouts matching GanttPro features.</span>
+                </li>
+                <li>
+                  <div class="check-badge">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="4">
+                      <polyline points="20 6 9 17 4 12"></polyline>
+                    </svg>
+                  </div>
+                  <span>Integrated interactive drag lines and sorting filters.</span>
+                </li>
+              </ul>
+            </div>
+
+            <div class="project-card">
+              <div class="project-card-badge">Web App</div>
+              <div class="project-card-header">
+                <span class="project-company">Blacksof Portfolio</span>
+                <h3>Innogent Portal</h3>
+                <p>Fluid micro-animated portfolio pages.</p>
+              </div>
+              <div class="project-card-divider"></div>
+              <ul class="project-card-list">
+                <li>
+                  <div class="check-badge">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="4">
+                      <polyline points="20 6 9 17 4 12"></polyline>
+                    </svg>
+                  </div>
+                  <span>Programmed micro-interaction UI transitions.</span>
+                </li>
+                <li>
+                  <div class="check-badge">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="4">
+                      <polyline points="20 6 9 17 4 12"></polyline>
+                    </svg>
+                  </div>
+                  <span>Optimized site rendering for perfect speed indices.</span>
+                </li>
+              </ul>
+            </div>
+
+            <div class="project-card">
+              <div class="project-card-badge">Web App</div>
+              <div class="project-card-header">
+                <span class="project-company">Blacksof Portfolio</span>
+                <h3>Supreme Group Portal</h3>
+                <p>Corporate portal optimized for industrial business lines.</p>
+              </div>
+              <div class="project-card-divider"></div>
+              <ul class="project-card-list">
+                <li>
+                  <div class="check-badge">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="4">
+                      <polyline points="20 6 9 17 4 12"></polyline>
+                    </svg>
+                  </div>
+                  <span>Optimized loading speeds across 11 portals.</span>
+                </li>
+                <li>
+                  <div class="check-badge">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="4">
+                      <polyline points="20 6 9 17 4 12"></polyline>
+                    </svg>
+                  </div>
+                  <span>Engineered mobile structural CSS transitions.</span>
+                </li>
+              </ul>
+            </div>
+
+            <div class="project-card">
+              <div class="project-card-badge">Catalog</div>
+              <div class="project-card-header">
+                <span class="project-company">Blacksof Portfolio</span>
+                <h3>Xero EV</h3>
+                <p>Eco-friendly vehicle models digital directory.</p>
+              </div>
+              <div class="project-card-divider"></div>
+              <ul class="project-card-list">
+                <li>
+                  <div class="check-badge">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="4">
+                      <polyline points="20 6 9 17 4 12"></polyline>
+                    </svg>
+                  </div>
+                  <span>Created dark-glass responsive catalog views.</span>
+                </li>
+                <li>
+                  <div class="check-badge">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="4">
+                      <polyline points="20 6 9 17 4 12"></polyline>
+                    </svg>
+                  </div>
+                  <span>Optimized visual assets loading pipelines.</span>
+                </li>
+              </ul>
+            </div>
+
+            <div class="project-card">
+              <div class="project-card-badge">Agri-tech</div>
+              <div class="project-card-header">
+                <span class="project-company">Blacksof Portfolio</span>
+                <h3>BharatRohan</h3>
+                <p>Agri-tech landing portal demonstrating drone mapping sensors.</p>
+              </div>
+              <div class="project-card-divider"></div>
+              <ul class="project-card-list">
+                <li>
+                  <div class="check-badge">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="4">
+                      <polyline points="20 6 9 17 4 12"></polyline>
+                    </svg>
+                  </div>
+                  <span>Revamped agricultural sensor interface details.</span>
+                </li>
+                <li>
+                  <div class="check-badge">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="4">
+                      <polyline points="20 6 9 17 4 12"></polyline>
+                    </svg>
+                  </div>
+                  <span>Optimized 17 responsive layouts and initial paint.</span>
+                </li>
+              </ul>
+            </div>
+
+            <div class="project-card">
+              <div class="project-card-badge">Web App</div>
+              <div class="project-card-header">
+                <span class="project-company">Blacksof Portfolio</span>
+                <h3>EF Polymer</h3>
+                <p>Clean showcase for superabsorbent polymer catalog.</p>
+              </div>
+              <div class="project-card-divider"></div>
+              <ul class="project-card-list">
+                <li>
+                  <div class="check-badge">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="4">
+                      <polyline points="20 6 9 17 4 12"></polyline>
+                    </svg>
+                  </div>
+                  <span>Engineered high-fidelity product showcase animations.</span>
+                </li>
+                <li>
+                  <div class="check-badge">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="4">
+                      <polyline points="20 6 9 17 4 12"></polyline>
+                    </svg>
+                  </div>
+                  <span>Achieved maximum Lighthouse performance metrics.</span>
+                </li>
+              </ul>
+            </div>
+
+            <div class="project-card">
+              <div class="project-card-badge">Database / SSR</div>
+              <div class="project-card-header">
+                <span class="project-company">Blacksof Portfolio</span>
+                <h3>AAK India</h3>
+                <p>Database synchronization and optimization layer.</p>
+              </div>
+              <div class="project-card-divider"></div>
+              <ul class="project-card-list">
+                <li>
+                  <div class="check-badge">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="4">
+                      <polyline points="20 6 9 17 4 12"></polyline>
+                    </svg>
+                  </div>
+                  <span>Integrated server-side rendering (SSR) support.</span>
+                </li>
+                <li>
+                  <div class="check-badge">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="4">
+                      <polyline points="20 6 9 17 4 12"></polyline>
+                    </svg>
+                  </div>
+                  <span>Fixed animation layout leaks on Windows VPS hosting.</span>
+                </li>
+              </ul>
+            </div>
+
+            <div class="project-card">
+              <div class="project-card-badge">Mobile App</div>
+              <div class="project-card-header">
+                <span class="project-company">Inkers Technology</span>
+                <h3>Employee Onboarding</h3>
+                <p>Mobile sync client uploading scanned metadata.</p>
+              </div>
+              <div class="project-card-divider"></div>
+              <ul class="project-card-list">
+                <li>
+                  <div class="check-badge">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="4">
+                      <polyline points="20 6 9 17 4 12"></polyline>
+                    </svg>
+                  </div>
+                  <span>Integrated camera capture scanners and search grids.</span>
+                </li>
+                <li>
+                  <div class="check-badge">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="4">
+                      <polyline points="20 6 9 17 4 12"></polyline>
+                    </svg>
+                  </div>
+                  <span>Programmed offscreen caching and backend upload sync.</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <section class="certificates-section container">
+          <div class="section-header">
+            <h2>Certifications</h2>
+          </div>
+          <div class="certificates-grid">
+            <div class="card-item">
+              <div class="card-item-header">
+                <span class="card-item-date">December 2023</span>
+                <h3>Introduction to Front-End Development</h3>
+                <span class="card-item-subtitle">Meta | Coursera</span>
+              </div>
+              <div class="card-item-body">
+                <p>Covered fundamental web technologies, layouts, developer tools, and responsive web build concepts.</p>
+              </div>
+            </div>
+
+            <div class="card-item">
+              <div class="card-item-header">
+                <span class="card-item-date">January 2024</span>
+                <h3>Programming with JavaScript</h3>
+                <span class="card-item-subtitle">Meta | Coursera</span>
+              </div>
+              <div class="card-item-body">
+                <p>Engineered core JavaScript applications focusing on variables, testing frameworks, and OOP paradigms.</p>
+              </div>
+            </div>
+
+            <div class="card-item">
+              <div class="card-item-header">
+                <span class="card-item-date">January 2024</span>
+                <h3>Version Control</h3>
+                <span class="card-item-subtitle">Meta | Coursera</span>
+              </div>
+              <div class="card-item-body">
+                <p>Mastered collaborative workflows, branching, and repository structures using Git and GitHub.</p>
+              </div>
+            </div>
+
+            <div class="card-item">
+              <div class="card-item-header">
+                <span class="card-item-date">January 2024</span>
+                <h3>HTML and CSS in depth</h3>
+                <span class="card-item-subtitle">Meta | Coursera</span>
+              </div>
+              <div class="card-item-body">
+                <p>Designed multi-page architectures using advanced styling grids, layouts, and SVG animation mechanics.</p>
+              </div>
+            </div>
+
+            <div class="card-item">
+              <div class="card-item-header">
+                <span class="card-item-date">January 2024</span>
+                <h3>React Basics</h3>
+                <span class="card-item-subtitle">Meta | Coursera</span>
+              </div>
+              <div class="card-item-body">
+                <p>Built modular, component-driven single-page interfaces utilizing props, state hooks, and virtual DOM.</p>
+              </div>
+            </div>
+
+            <div class="card-item">
+              <div class="card-item-header">
+                <span class="card-item-date">January 2024</span>
+                <h3>Advanced React</h3>
+                <span class="card-item-subtitle">Meta | Coursera</span>
+              </div>
+              <div class="card-item-body">
+                <p>Programmed complex web states, custom hooks, context modules, and asynchronous API render pipelines.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <footer>
+          <div class="container">
+            <div class="footer-contacts">
+              <div class="footer-contact-item">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <line x1="2" y1="12" x2="22" y2="12"></line>
+                  <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+                </svg>
+                <span class="contact-value">www.bshakti.in</span>
+              </div>
+
+              <div class="footer-contact-item">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                  <polyline points="22,6 12,13 2,6"></polyline>
+                </svg>
+                <span class="contact-value">basantrajshakti@gmail.com</span>
+              </div>
+
+              <div class="footer-contact-item">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <path
+                    d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"
+                  ></path>
+                </svg>
+                <span class="contact-value">+91 73689 53257</span>
+              </div>
+
+              <div class="footer-contact-item">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                  <rect x="2" y="9" width="4" height="12"></rect>
+                  <circle cx="4" cy="4" r="2"></circle>
+                </svg>
+                <span class="contact-value">linkedin.com/in/basantrajshakti</span>
+              </div>
+            </div>
+            <div class="footer-bottom">
+              <p>andcopy; 2026 Basantraj Shakti. All rights reserved.</p>
+            </div>
+          </div>
+        </footer>
+      </body>
+    </html>
+
   </foreignObject>
 </svg>
