@@ -463,27 +463,153 @@
         margin-bottom: 4rem;
       }
 
-      /* Skills/Projects Grid */
-      .grid-3 {
+      /* Projects Grid & Cards */
+      .projects-grid {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-        gap: 24px;
+        grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+        gap: 32px;
+        margin-top: 40px;
       }
 
-      .bento-card {
-        background: var(--bg-card);
-        border: 1px solid var(--border-color);
-        border-radius: 16px;
-        padding: 32px;
+      .project-card {
+        position: relative;
+        background: linear-gradient(180deg, rgba(20, 20, 35, 0.6) 0%, rgba(12, 12, 22, 0.8) 100%);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        border-radius: 28px;
+        padding: 24px 24px;
         display: flex;
         flex-direction: column;
-        gap: 20px;
+        justify-content: flex-start;
+        box-shadow:
+          0 30px 60px -15px rgba(0, 0, 0, 0.6),
+          inset 0 1px 0 rgba(255, 255, 255, 0.06);
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+        overflow: hidden;
       }
 
-      .bento-card h3 {
+      /* Glow overlays replicating the screenshot layout (blue theme) */
+      .project-card::before {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 80px;
+        background: linear-gradient(to top, rgba(8, 60, 211, 0.18) 0%, transparent 100%);
+        pointer-events: none;
+        z-index: 1;
+      }
+
+      .project-card::after {
+        content: "";
+        position: absolute;
+        top: -60px;
+        right: -60px;
+        width: 140px;
+        height: 140px;
+        background: radial-gradient(circle, rgba(56, 189, 248, 0.1) 0%, transparent 70%);
+        pointer-events: none;
+        z-index: 1;
+      }
+
+      .project-card-header {
+        position: relative;
+        z-index: 2;
+        margin-bottom: 12px;
+      }
+
+      .project-card-header .project-company {
+        font-size: 0.68rem;
+        color: #60a5fa;
+        text-transform: uppercase;
+        letter-spacing: 1.5px;
+        font-weight: 700;
+        margin-bottom: 4px;
+        display: block;
+      }
+
+      .project-card-header h3 {
+        font-size: 1.25rem;
+        font-weight: 700;
         color: var(--text-light);
-        font-size: 1.3rem;
+        margin-bottom: 6px;
+        line-height: 1.25;
+      }
+
+      .project-card-header p {
+        font-size: 0.84rem;
+        color: var(--text-muted);
+        line-height: 1.4;
         margin: 0;
+      }
+
+      .project-card-divider {
+        height: 1px;
+        background: rgba(255, 255, 255, 0.06);
+        margin: 14px 0;
+        position: relative;
+        z-index: 2;
+      }
+
+      .project-card-list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        position: relative;
+        z-index: 2;
+      }
+
+      .project-card-list li {
+        display: flex;
+        align-items: flex-start;
+        gap: 12px;
+        font-size: 0.9rem;
+        color: var(--text-light);
+        line-height: 1.4;
+      }
+
+      .check-badge {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 18px;
+        height: 18px;
+        border-radius: 50%;
+        background: #083cd3;
+        color: #ffffff;
+        flex-shrink: 0;
+        margin-top: 2px;
+      }
+
+      .check-badge svg {
+        width: 10px;
+        height: 10px;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+      }
+
+      .project-card-action {
+        position: relative;
+        z-index: 2;
+      }
+
+      .btn-project {
+        display: block;
+        width: 100%;
+        text-align: center;
+        padding: 14px;
+        border-radius: 99px;
+        font-size: 0.9rem;
+        font-weight: 700;
+        color: #ffffff;
+        background: linear-gradient(135deg, #083cd3 0%, #38bdf8 100%);
+        box-shadow: 0 8px 24px rgba(8, 60, 211, 0.3);
+        text-decoration: none;
+        transition: box-shadow 0.2s ease;
       }
 
       .skill-tags {
@@ -1294,31 +1420,483 @@
 
     <section class="projects-section container">
       <div class="section-header">
-        <h2>Key Projects</h2>
+        <h2>Projects</h2>
       </div>
-      <div class="grid-3">
-        <div class="bento-card">
-          <div class="project-company">AlertMi</div>
-          <h3 class="project-title">AI-Agent Engine</h3>
-          <p>Multi-agent AI engine analyzing workspace emails to deliver financial analytics dashboards. Features on-premises deployment eliminating compliance overhead.</p>
+      <div class="projects-grid">
+        <!-- 1. AlertMi AI-Agent -->
+        <div class="project-card">
+          <div class="project-card-header">
+            <span class="project-company">AlertMi</span>
+            <h3>AlertMi AI-Agent</h3>
+            <p>AI agent analyzing workspace emails for analytics.</p>
+          </div>
+          <div class="project-card-divider"></div>
+          <ul class="project-card-list">
+            <li>
+              <div class="check-badge">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="4">
+                  <polyline points="20 6 9 17 4 12"></polyline>
+                </svg>
+              </div>
+              <span>Engineered email parser multi-agent engine.</span>
+            </li>
+            <li>
+              <div class="check-badge">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="4">
+                  <polyline points="20 6 9 17 4 12"></polyline>
+                </svg>
+              </div>
+              <span>Built Dockerized desktop cross-platform installers.</span>
+            </li>
+          </ul>
         </div>
 
-        <div class="bento-card">
-          <div class="project-company">Lumit</div>
-          <h3 class="project-title">Prod Inspekt</h3>
-          <p>Virtualization of 27M+ records rendering, reducing crashes and driving 45% revenue growth. Includes drag-and-drop calendar scheduling.</p>
+        <!-- 2. Prod Inspekt -->
+        <div class="project-card">
+          <div class="project-card-header">
+            <span class="project-company">Lumit / Valco Melton</span>
+            <h3>Prod Inspekt</h3>
+            <p>Industrial scheduling and visualization system.</p>
+          </div>
+          <div class="project-card-divider"></div>
+          <ul class="project-card-list">
+            <li>
+              <div class="check-badge">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="4">
+                  <polyline points="20 6 9 17 4 12"></polyline>
+                </svg>
+              </div>
+              <span>Handled 27M+ records with virtualization.</span>
+            </li>
+            <li>
+              <div class="check-badge">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="4">
+                  <polyline points="20 6 9 17 4 12"></polyline>
+                </svg>
+              </div>
+              <span>Optimized frontend to drop load time by 90%.</span>
+            </li>
+          </ul>
         </div>
 
-        <div class="bento-card">
-          <div class="project-company">Lumit</div>
-          <h3 class="project-title">AI 3D Vision</h3>
-          <p>Offline MongoDB query generation on 3-4GB RAM devices using quantized LLaMA 3.2 and Qwen-Coder 2.5 models.</p>
+        <!-- 3. Coat & Weight Inspekt -->
+        <div class="project-card">
+          <div class="project-card-header">
+            <span class="project-company">Lumit</span>
+            <h3>Coat & Weight Inspekt</h3>
+            <p>High-resolution industrial defect annotation platform.</p>
+          </div>
+          <div class="project-card-divider"></div>
+          <ul class="project-card-list">
+            <li>
+              <div class="check-badge">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="4">
+                  <polyline points="20 6 9 17 4 12"></polyline>
+                </svg>
+              </div>
+              <span>Created canvas defect label annotation tools.</span>
+            </li>
+            <li>
+              <div class="check-badge">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="4">
+                  <polyline points="20 6 9 17 4 12"></polyline>
+                </svg>
+              </div>
+              <span>Replaced complex image software editing workflows.</span>
+            </li>
+          </ul>
         </div>
 
-        <div class="bento-card">
-          <div class="project-company">7Unit Softwares</div>
-          <h3 class="project-title">WeUnit Optimization</h3>
-          <p>Optimized tech stack leading to bundle reductions (35MB to 3.5MB) and achieved 1100% load time improvement.</p>
+        <!-- 4. AI 3D Vision -->
+        <div class="project-card">
+          <div class="project-card-header">
+            <span class="project-company">Lumit</span>
+            <h3>AI 3D Vision</h3>
+            <p>Offline database query generation via local LLMs.</p>
+          </div>
+          <div class="project-card-divider"></div>
+          <ul class="project-card-list">
+            <li>
+              <div class="check-badge">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="4">
+                  <polyline points="20 6 9 17 4 12"></polyline>
+                </svg>
+              </div>
+              <span>Quantized local LLaMA models for offline queries.</span>
+            </li>
+            <li>
+              <div class="check-badge">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="4">
+                  <polyline points="20 6 9 17 4 12"></polyline>
+                </svg>
+              </div>
+              <span>Built NLP chatbot running on 3-4GB RAM systems.</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- 5. WeUnit -->
+        <div class="project-card">
+          <div class="project-card-header">
+            <span class="project-company">7Unit Softwares</span>
+            <h3>WeUnit</h3>
+            <p>System speed optimization and stack modernization.</p>
+          </div>
+          <div class="project-card-divider"></div>
+          <ul class="project-card-list">
+            <li>
+              <div class="check-badge">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="4">
+                  <polyline points="20 6 9 17 4 12"></polyline>
+                </svg>
+              </div>
+              <span>Modernized core technology stacks to Node 20.</span>
+            </li>
+            <li>
+              <div class="check-badge">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="4">
+                  <polyline points="20 6 9 17 4 12"></polyline>
+                </svg>
+              </div>
+              <span>Boosted loading speeds by 1100% (55s to 5s).</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- 6. Blacksof Web Platform -->
+        <div class="project-card">
+          <div class="project-card-header">
+            <span class="project-company">Blacksof</span>
+            <h3>Blacksof Website</h3>
+            <p>Full-stack agency platform performance overhaul.</p>
+          </div>
+          <div class="project-card-divider"></div>
+          <ul class="project-card-list">
+            <li>
+              <div class="check-badge">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="4">
+                  <polyline points="20 6 9 17 4 12"></polyline>
+                </svg>
+              </div>
+              <span>Rebuilt portal using Astro SSR layouts.</span>
+            </li>
+            <li>
+              <div class="check-badge">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="4">
+                  <polyline points="20 6 9 17 4 12"></polyline>
+                </svg>
+              </div>
+              <span>Drove a 30% increase in lead conversions.</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- 7. Innvolution Healthcare -->
+        <div class="project-card">
+          <div class="project-card-header">
+            <span class="project-company">Blacksof Portfolio</span>
+            <h3>Innvolution Portal</h3>
+            <p>Interactive medical platform with global mapping.</p>
+          </div>
+          <div class="project-card-divider"></div>
+          <ul class="project-card-list">
+            <li>
+              <div class="check-badge">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="4">
+                  <polyline points="20 6 9 17 4 12"></polyline>
+                </svg>
+              </div>
+              <span>Created Three.js interactive 3D world maps.</span>
+            </li>
+            <li>
+              <div class="check-badge">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="4">
+                  <polyline points="20 6 9 17 4 12"></polyline>
+                </svg>
+              </div>
+              <span>Built responsive layouts across 35 pages.</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- 8. CPO Assist -->
+        <div class="project-card">
+          <div class="project-card-header">
+            <span class="project-company">Blacksof Portfolio</span>
+            <h3>CPO Assist</h3>
+            <p>EV charging network location mapping portal.</p>
+          </div>
+          <div class="project-card-divider"></div>
+          <ul class="project-card-list">
+            <li>
+              <div class="check-badge">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="4">
+                  <polyline points="20 6 9 17 4 12"></polyline>
+                </svg>
+              </div>
+              <span>Optimized map markers and loading layout.</span>
+            </li>
+            <li>
+              <div class="check-badge">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="4">
+                  <polyline points="20 6 9 17 4 12"></polyline>
+                </svg>
+              </div>
+              <span>Integrated full keyboard accessibility focus layers.</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- 9. 3D Model Voxelizer -->
+        <div class="project-card">
+          <div class="project-card-header">
+            <span class="project-company">Inkers Technology</span>
+            <h3>3D Model Voxelizer</h3>
+            <p>3D building layout to modular voxel translator.</p>
+          </div>
+          <div class="project-card-divider"></div>
+          <ul class="project-card-list">
+            <li>
+              <div class="check-badge">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="4">
+                  <polyline points="20 6 9 17 4 12"></polyline>
+                </svg>
+              </div>
+              <span>Rendered 3D voxel grids with React/Three.js.</span>
+            </li>
+            <li>
+              <div class="check-badge">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="4">
+                  <polyline points="20 6 9 17 4 12"></polyline>
+                </svg>
+              </div>
+              <span>Programmed math for area and volume metrics.</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- 10. Gantt Chart Library -->
+        <div class="project-card">
+          <div class="project-card-header">
+            <span class="project-company">Inkers Technology</span>
+            <h3>Gantt Chart Library</h3>
+            <p>Custom construction schedule task calendar library.</p>
+          </div>
+          <div class="project-card-divider"></div>
+          <ul class="project-card-list">
+            <li>
+              <div class="check-badge">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="4">
+                  <polyline points="20 6 9 17 4 12"></polyline>
+                </svg>
+              </div>
+              <span>Built custom Gantt layouts matching GanttPro features.</span>
+            </li>
+            <li>
+              <div class="check-badge">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="4">
+                  <polyline points="20 6 9 17 4 12"></polyline>
+                </svg>
+              </div>
+              <span>Integrated interactive drag lines and sorting filters.</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- 11. Innogent Portal -->
+        <div class="project-card">
+          <div class="project-card-header">
+            <span class="project-company">Blacksof Portfolio</span>
+            <h3>Innogent Portal</h3>
+            <p>Fluid micro-animated portfolio pages.</p>
+          </div>
+          <div class="project-card-divider"></div>
+          <ul class="project-card-list">
+            <li>
+              <div class="check-badge">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="4">
+                  <polyline points="20 6 9 17 4 12"></polyline>
+                </svg>
+              </div>
+              <span>Programmed micro-interaction UI transitions.</span>
+            </li>
+            <li>
+              <div class="check-badge">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="4">
+                  <polyline points="20 6 9 17 4 12"></polyline>
+                </svg>
+              </div>
+              <span>Optimized site rendering for perfect speed indices.</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- 12. Supreme Group -->
+        <div class="project-card">
+          <div class="project-card-header">
+            <span class="project-company">Blacksof Portfolio</span>
+            <h3>Supreme Group Portal</h3>
+            <p>Corporate portal optimized for industrial business lines.</p>
+          </div>
+          <div class="project-card-divider"></div>
+          <ul class="project-card-list">
+            <li>
+              <div class="check-badge">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="4">
+                  <polyline points="20 6 9 17 4 12"></polyline>
+                </svg>
+              </div>
+              <span>Optimized loading speeds across 11 portals.</span>
+            </li>
+            <li>
+              <div class="check-badge">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="4">
+                  <polyline points="20 6 9 17 4 12"></polyline>
+                </svg>
+              </div>
+              <span>Engineered mobile structural CSS transitions.</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- 13. Xero EV -->
+        <div class="project-card">
+          <div class="project-card-header">
+            <span class="project-company">Blacksof Portfolio</span>
+            <h3>Xero EV</h3>
+            <p>Eco-friendly vehicle models digital directory.</p>
+          </div>
+          <div class="project-card-divider"></div>
+          <ul class="project-card-list">
+            <li>
+              <div class="check-badge">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="4">
+                  <polyline points="20 6 9 17 4 12"></polyline>
+                </svg>
+              </div>
+              <span>Created dark-glass responsive catalog views.</span>
+            </li>
+            <li>
+              <div class="check-badge">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="4">
+                  <polyline points="20 6 9 17 4 12"></polyline>
+                </svg>
+              </div>
+              <span>Optimized visual assets loading pipelines.</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- 14. BharatRohan -->
+        <div class="project-card">
+          <div class="project-card-header">
+            <span class="project-company">Blacksof Portfolio</span>
+            <h3>BharatRohan</h3>
+            <p>Agri-tech landing portal demonstrating drone mapping sensors.</p>
+          </div>
+          <div class="project-card-divider"></div>
+          <ul class="project-card-list">
+            <li>
+              <div class="check-badge">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="4">
+                  <polyline points="20 6 9 17 4 12"></polyline>
+                </svg>
+              </div>
+              <span>Revamped agricultural sensor interface details.</span>
+            </li>
+            <li>
+              <div class="check-badge">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="4">
+                  <polyline points="20 6 9 17 4 12"></polyline>
+                </svg>
+              </div>
+              <span>Optimized 17 responsive layouts and initial paint.</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- 15. EF Polymer -->
+        <div class="project-card">
+          <div class="project-card-header">
+            <span class="project-company">Blacksof Portfolio</span>
+            <h3>EF Polymer</h3>
+            <p>Clean showcase for superabsorbent polymer catalog.</p>
+          </div>
+          <div class="project-card-divider"></div>
+          <ul class="project-card-list">
+            <li>
+              <div class="check-badge">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="4">
+                  <polyline points="20 6 9 17 4 12"></polyline>
+                </svg>
+              </div>
+              <span>Engineered high-fidelity product showcase animations.</span>
+            </li>
+            <li>
+              <div class="check-badge">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="4">
+                  <polyline points="20 6 9 17 4 12"></polyline>
+                </svg>
+              </div>
+              <span>Achieved maximum Lighthouse performance metrics.</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- 16. AAK India -->
+        <div class="project-card">
+          <div class="project-card-header">
+            <span class="project-company">Blacksof Portfolio</span>
+            <h3>AAK India</h3>
+            <p>Database synchronization and optimization layer.</p>
+          </div>
+          <div class="project-card-divider"></div>
+          <ul class="project-card-list">
+            <li>
+              <div class="check-badge">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="4">
+                  <polyline points="20 6 9 17 4 12"></polyline>
+                </svg>
+              </div>
+              <span>Integrated server-side rendering (SSR) support.</span>
+            </li>
+            <li>
+              <div class="check-badge">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="4">
+                  <polyline points="20 6 9 17 4 12"></polyline>
+                </svg>
+              </div>
+              <span>Fixed animation layout leaks on Windows VPS hosting.</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- 17. Flutter Onboarding App -->
+        <div class="project-card">
+          <div class="project-card-header">
+            <span class="project-company">Inkers Technology</span>
+            <h3>Flutter Onboarding</h3>
+            <p>Mobile sync client uploading scanned metadata.</p>
+          </div>
+          <div class="project-card-divider"></div>
+          <ul class="project-card-list">
+            <li>
+              <div class="check-badge">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="4">
+                  <polyline points="20 6 9 17 4 12"></polyline>
+                </svg>
+              </div>
+              <span>Integrated camera capture scanners & search grids.</span>
+            </li>
+            <li>
+              <div class="check-badge">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="4">
+                  <polyline points="20 6 9 17 4 12"></polyline>
+                </svg>
+              </div>
+              <span>Programmed offscreen caching & backend upload sync.</span>
+            </li>
+          </ul>
         </div>
       </div>
     </section>
